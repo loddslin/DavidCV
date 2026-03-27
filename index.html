@@ -588,6 +588,43 @@
       color: var(--primary-dark);
     }
 
+    /* Live Preview */
+    .live-preview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 20px;
+    }
+    .live-preview-bar {
+      background: #1e293b;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .live-preview-bar .dots { display:flex; gap:4px; }
+    .live-preview-bar .dot-r { width:10px;height:10px;border-radius:50%;background:#ef4444; }
+    .live-preview-bar .dot-y { width:10px;height:10px;border-radius:50%;background:#f59e0b; }
+    .live-preview-bar .dot-g { width:10px;height:10px;border-radius:50%;background:#10b981; }
+    .live-preview-bar .url-bar {
+      flex:1; background:#334155; border-radius:6px; padding:4px 12px; font-family:monospace; font-size:11px; color:#94a3b8;
+    }
+    .live-preview-bar .url-bar a { color:#60a5fa; text-decoration:none; }
+    .live-preview-bar .url-bar a:hover { text-decoration:underline; }
+    .live-preview iframe {
+      width:100%; height:500px; border:none; display:block;
+    }
+    .live-preview-fallback {
+      height:500px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#f8fafc; gap:12px;
+    }
+    .live-preview-fallback a {
+      background:var(--primary); color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:600; font-size:13px;
+    }
+
     /* Print */
     @media print {
       .top-bar { position: static; }
@@ -692,7 +729,7 @@
         <div><strong>Prompt Engineering</strong>：精准描述需求、设定边界条件、迭代审核输出，驱动 AI 高质量产出代码与方案</div>
         <div><strong>AI 产品理解</strong>：深度理解 Function Calling、SSE Streaming、RAG、Agent 工作流等 AI 能力，能准确判断模型能力边界</div>
         <div><strong>AI 工作流设计</strong>：内容采集 → AI 改写翻译 → 审核 → 多平台自动分发（已实际落地运营）</div>
-        <div><strong>质量管控</strong>：通过反复审核、安全审计、边界测试确保 AI 输出质量（LGDLB.io 4 轮安全审计，59/61 修复）</div>
+        <div><strong>质量管控</strong>：通过反复审核、安全审计、边界测试确保 AI 输出质量（LGJLB.io 4 轮安全审计，59/61 修复）</div>
       </div>
 
       <div class="cv-section-title">&#128736; 产品认知 & 工作方式</div>
@@ -767,7 +804,7 @@
       <div class="cv-card" style="border-left: 4px solid var(--accent);">
         <div class="cv-card-header">
           <div>
-            <div class="cv-card-company">LGDLB.io — AI 驱动社区产品平台 <span class="badge-ai">AI Product</span></div>
+            <div class="cv-card-company">LGJLB.io — AI 驱动社区产品平台 <span class="badge-ai">AI Product</span></div>
             <div class="cv-card-role">AI 产品经理 / 通过 AI 协作独立完成 0→1</div>
           </div>
           <div class="cv-card-date">2025.01 - 2025.02</div>
@@ -878,7 +915,7 @@
   <div class="sub-tabs">
     <button class="sub-tab active" onclick="switchSub('proj-feel')">Feel.Trading AI 交易平台</button>
     <button class="sub-tab" onclick="switchSub('proj-sports')">Sports.game AI 预测</button>
-    <button class="sub-tab" onclick="switchSub('proj-tgbbs')">LGDLB.io AI 社区平台</button>
+    <button class="sub-tab" onclick="switchSub('proj-tgbbs')">LGJLB.io AI 社区平台</button>
     <button class="sub-tab" onclick="switchSub('proj-mrvip')">MR.VIP TG 金融生态</button>
   </div>
 
@@ -898,6 +935,16 @@
           <span class="project-tag">Binance API</span>
         </div>
       </div>
+    </div>
+
+    <!-- Live Preview -->
+    <div class="live-preview">
+      <div class="live-preview-bar">
+        <div class="dots"><div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div></div>
+        <div class="url-bar"><a href="https://feel.trading" target="_blank">https://feel.trading</a></div>
+        <a href="https://feel.trading" target="_blank" style="color:#60a5fa;font-size:11px;text-decoration:none;">&#8599; 新窗口打开</a>
+      </div>
+      <iframe src="https://feel.trading" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
 
     <!-- KPI Dashboard -->
@@ -1064,6 +1111,16 @@
           <span class="project-tag">Arbitrum L2</span>
         </div>
       </div>
+    </div>
+
+    <!-- Live Preview -->
+    <div class="live-preview">
+      <div class="live-preview-bar">
+        <div class="dots"><div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div></div>
+        <div class="url-bar"><a href="https://sports.game" target="_blank">https://sports.game</a></div>
+        <a href="https://sports.game" target="_blank" style="color:#60a5fa;font-size:11px;text-decoration:none;">&#8599; 新窗口打开</a>
+      </div>
+      <iframe src="https://sports.game" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
 
     <div class="dashboard-grid">
@@ -1333,12 +1390,12 @@
     </div>
   </div>
 
-  <!-- ===== LGDLB.io ===== -->
+  <!-- ===== LGJLB.io ===== -->
   <div id="sub-proj-tgbbs" class="sub-content">
     <div class="project-header">
       <div class="project-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">LG</div>
       <div>
-        <h2>LGDLB.io — AI 驱动社区产品平台 <span class="badge-ai">AI Product</span></h2>
+        <h2>LGJLB.io — AI 驱动社区产品平台 <span class="badge-ai">AI Product</span></h2>
         <p>AI 内容审核 &middot; AI 预测市场 &middot; AI 用户增长 &middot; Telegram Mini App &middot; TON 区块链支付</p>
         <div style="margin-top: 6px;">
           <span class="project-tag">AI Moderation</span>
@@ -1350,6 +1407,16 @@
           <span class="project-tag">LINE Pay</span>
         </div>
       </div>
+    </div>
+
+    <!-- Live Preview -->
+    <div class="live-preview">
+      <div class="live-preview-bar">
+        <div class="dots"><div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div></div>
+        <div class="url-bar"><a href="https://lgjlb.io" target="_blank">https://lgjlb.io</a></div>
+        <a href="https://lgjlb.io" target="_blank" style="color:#60a5fa;font-size:11px;text-decoration:none;">&#8599; 新窗口打开</a>
+      </div>
+      <iframe src="https://lgjlb.io" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
 
     <div class="dashboard-grid">
@@ -2193,7 +2260,7 @@
       <strong>原则二：先做 80% 准确率的事</strong> — 优先自动化那些"做错了也容易改"的任务，高风险决策留给人<br>
       <strong>原则三：渐进式导入</strong> — 先在一个部门试点 → 验证效果 → 调整 → 再推广，不要一上来就全公司铺开<br>
       <strong>原则四：Day 1 就定指标</strong> — 导入前就量化现状（审批平均多久、HR 花多少时间答重复问题），上线后才有对比<br><br>
-      <em>我在 LGDLB.io 的 131 次迭代中学到的最重要的一课：<strong>能跑起来比完美更重要，先落地再优化。</strong></em>
+      <em>我在 LGJLB.io 的 131 次迭代中学到的最重要的一课：<strong>能跑起来比完美更重要，先落地再优化。</strong></em>
     </div>
   </div>
 
