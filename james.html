@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVID LIN - 集团项目统筹 &amp; 业务负责人 Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #dbeafe;
+      --accent: #10b981;
+      --accent-orange: #f59e0b;
+      --accent-red: #ef4444;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-secondary: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* ===== Top Navigation ===== */
+    .top-bar {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .top-bar .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .top-bar .avatar-sm {
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: bold;
+    }
+
+    .top-bar .brand-text h1 { font-size: 20px; font-weight: 700; }
+    .top-bar .brand-text p { font-size: 12px; opacity: 0.85; }
+
+    .tab-nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+    .tab-btn.active {
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    /* ===== Tab Content ===== */
+    .tab-content { display: none; padding: 30px 40px; max-width: 1400px; margin: 0 auto; }
+    .tab-content.active { display: block; }
+
+    /* ===== CV Tab ===== */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 30px;
+    }
+
+    .cv-sidebar {
+      background: linear-gradient(180deg, #f0f7ff 0%, #e8f0fe 100%);
+      border-radius: 16px;
+      padding: 30px 24px;
+      border: 1px solid var(--border);
+    }
+
+    .cv-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 42px; color: white; font-weight: bold;
+    }
+
+    .cv-name { text-align: center; font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .cv-title-text { text-align: center; font-size: 14px; color: var(--primary); margin-bottom: 16px; font-weight: 500; }
+
+    .cv-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 24px; }
+    .cv-tag {
+      background: white;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .cv-section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary);
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    .cv-info-item { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; display: flex; gap: 8px; }
+    .cv-info-label { color: #94a3b8; min-width: 50px; }
+
+    .cv-intro {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      box-shadow: var(--shadow);
+    }
+
+    .cv-main { display: flex; flex-direction: column; gap: 20px; }
+
+    .cv-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .cv-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .cv-card-company { font-size: 17px; font-weight: 700; color: var(--text); }
+    .cv-card-role { font-size: 13px; color: var(--primary); font-weight: 500; margin-top: 2px; }
+    .cv-card-date {
+      background: var(--primary);
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .cv-card-body ul { list-style: none; }
+    .cv-card-body li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .cv-card-body li::before { content: '▸'; position: absolute; left: 0; color: var(--primary); }
+
+    .cv-results-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-result-chip {
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 8px 14px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .cv-result-value { font-size: 18px; font-weight: 700; color: var(--primary); }
+    .cv-result-label { font-size: 10px; color: var(--text-secondary); }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .skill-item {
+      background: #f0f7ff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .skill-item-title { font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .skill-item-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ===== Portfolio Tab ===== */
+    .project-section {
+      margin-bottom: 40px;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .project-header h2 { font-size: 22px; font-weight: 700; }
+    .project-header p { font-size: 13px; color: var(--text-secondary); }
+
+    .project-tag {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      margin-right: 4px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .metric-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .metric-value { font-size: 26px; font-weight: 700; color: var(--text); }
+    .metric-change { font-size: 11px; margin-top: 4px; font-weight: 500; }
+    .metric-up { color: var(--accent); }
+    .metric-down { color: var(--accent-red); }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-title .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* CSS Bar Charts */
+    .bar-chart { display: flex; flex-direction: column; gap: 8px; }
+    .bar-row { display: flex; align-items: center; gap: 10px; }
+    .bar-label { font-size: 11px; color: var(--text-secondary); width: 80px; text-align: right; white-space: nowrap; }
+    .bar-track { flex: 1; height: 22px; background: #f1f5f9; border-radius: 6px; overflow: hidden; position: relative; }
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.6s ease;
+      display: flex; align-items: center; padding-left: 8px;
+      font-size: 10px; color: white; font-weight: 600;
+    }
+
+    /* Status indicators */
+    .status-grid { display: flex; flex-direction: column; gap: 6px; }
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .status-online { background: var(--accent); }
+    .status-warning { background: var(--accent-orange); }
+    .status-offline { background: var(--accent-red); }
+
+    /* Mini sparkline using CSS */
+    .sparkline {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 30px;
+    }
+    .spark-bar {
+      width: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+    /* Table */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .data-table th {
+      text-align: left;
+      padding: 8px 10px;
+      background: #f1f5f9;
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .data-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .data-table tr:hover td { background: #f8fafc; }
+
+    /* Architecture diagram */
+    .arch-flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 16px 0;
+    }
+
+    .arch-node {
+      background: var(--primary-light);
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      min-width: 100px;
+    }
+
+    .arch-arrow {
+      font-size: 20px;
+      color: var(--primary);
+      padding: 0 6px;
+    }
+
+    .arch-node.green { background: #d1fae5; border-color: var(--accent); color: #065f46; }
+    .arch-node.orange { background: #fef3c7; border-color: var(--accent-orange); color: #92400e; }
+    .arch-node.red { background: #fee2e2; border-color: var(--accent-red); color: #991b1b; }
+
+    /* ===== Interview Tab ===== */
+    .proposal-header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .proposal-header h2 { font-size: 24px; margin-bottom: 8px; }
+    .proposal-header p { font-size: 14px; opacity: 0.85; }
+
+    .proposal-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .proposal-section h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .proposal-section h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 14px 0 8px;
+    }
+
+    .pain-point {
+      background: #fef2f2;
+      border-left: 3px solid var(--accent-red);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      color: #991b1b;
+    }
+
+    .solution-point {
+      background: #f0fdf4;
+      border-left: 3px solid var(--accent);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      color: #065f46;
+    }
+
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .roi-card {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #ede9fe 100%);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .roi-value { font-size: 22px; font-weight: 700; color: var(--primary); }
+    .roi-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+
+    .timeline-list { display: flex; flex-direction: column; gap: 10px; }
+    .timeline-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .timeline-badge {
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .timeline-text { font-size: 12px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+
+    .collab-box {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid var(--accent-orange);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .collab-box h4 {
+      color: #92400e;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .collab-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: #78350f;
+    }
+
+    .collab-num {
+      background: var(--accent-orange);
+      color: white;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Flow diagram for proposals */
+    .flow-container {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 14px 0;
+      overflow-x: auto;
+    }
+
+    .flow-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .flow-node {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      min-width: 90px;
+      border: 2px solid;
+    }
+
+    .flow-arrow-down {
+      text-align: center;
+      font-size: 18px;
+      color: var(--primary);
+      margin: 4px 0;
+    }
+
+    .highlight-box {
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 10px 0;
+      font-size: 12px;
+      color: var(--primary-dark);
+    }
+
+    /* Print */
+    @media print {
+      .top-bar { position: static; }
+      .tab-content { display: block !important; page-break-before: always; }
+      .tab-nav { display: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cv-grid { grid-template-columns: 1fr; }
+      .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+      .panel-grid { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .roi-grid { grid-template-columns: repeat(2, 1fr); }
+      .tab-nav { flex-wrap: wrap; }
+      .top-bar { flex-direction: column; gap: 12px; padding: 16px 20px; }
+      .tab-content { padding: 20px; }
+    }
+
+    /* Sub-tabs */
+    .sub-tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 0; }
+    .sub-tab {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .sub-tab:hover { color: var(--primary); }
+    .sub-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+    .sub-content { display: none; }
+    .sub-content.active { display: block; }
+
+    /* ===== Comparison Table ===== */
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 12px 0; }
+    .compare-table th { background: var(--primary); color: white; padding: 10px; text-align: left; }
+    .compare-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    .compare-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .badge-ai {
+      display: inline-block;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="brand">
+    <div class="avatar-sm">DL</div>
+    <div class="brand-text">
+      <h1>DAVID LIN</h1>
+      <p>集团项目统筹 &middot; 10+ Years iGaming &amp; 互联网 &middot; 多项目并行管理 &middot; 海外多市场落地</p>
+    </div>
+  </div>
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('cv')">个人简历</button>
+    <button class="tab-btn" onclick="switchTab('portfolio')">项目作品集</button>
+  </div>
+</div>
+
+<!-- ========================================= -->
+<!-- TAB 1: CV / RESUME -->
+<!-- ========================================= -->
+<div id="tab-cv" class="tab-content active">
+  <div class="cv-grid">
+    <!-- Sidebar -->
+    <div class="cv-sidebar">
+      <div class="cv-avatar">DL</div>
+      <div class="cv-name">DAVID LIN</div>
+      <div class="cv-title-text">集团项目统筹 &middot; iGaming 业务负责人</div>
+
+      <div class="cv-tags">
+        <span class="cv-tag">iGaming 行业 10年+</span>
+        <span class="cv-tag">多项目统筹</span>
+        <span class="cv-tag">海外多市场</span>
+        <span class="cv-tag">B端+C端</span>
+        <span class="cv-tag">API 平台</span>
+        <span class="cv-tag">链上支付</span>
+      </div>
+
+      <div class="cv-section-title">&#128100; 基本信息</div>
+      <div class="cv-info-item"><span class="cv-info-label">籍贯</span>台湾</div>
+      <div class="cv-info-item"><span class="cv-info-label">语言</span>中文（母语）/ 英文（工作语言）</div>
+      <div class="cv-info-item"><span class="cv-info-label">目标</span>集团特助 / 项目统筹负责人</div>
+      <div class="cv-info-item"><span class="cv-info-label">面试</span>东京 / 香港均可</div>
+
+      <div class="cv-section-title">&#128188; 多项目统筹 & 管理能力</div>
+      <div class="cv-info-item" style="flex-direction:column; gap:4px;">
+        <div><strong>跨项目并行管理</strong>：同时统筹多条产品线（平台运营、游戏产品、支付系统、代理体系、媒体矩阵），确保各线推进节奏与资源协调</div>
+        <div><strong>技术团队管理</strong>：带领技术团队完成自动化奖励系统、多语系扩展、活动任务系统、代理系统等核心模块开发与交付</div>
+        <div><strong>跨部门协调</strong>：对接老板/客户需求 → 拆解为可执行任务 → 协调开发、设计、运营团队推进 → 验收交付</div>
+        <div><strong>向上汇报</strong>：定期整合全项目进度、关键指标、风险预警，为管理层决策提供数据支撑</div>
+        <div><strong>分公司搭建</strong>：独立完成台湾分公司从 0 到 1 的体系搭建（团队组建、流程建立、供应商对接）</div>
+      </div>
+
+      <div class="cv-section-title">&#127922; iGaming 行业深度认知</div>
+      <div class="cv-info-item" style="flex-direction:column; gap:4px;">
+        <div><strong>产品矩阵理解</strong>：真人视讯、电子游戏、体育、彩票等品类的产品逻辑与 API 接入流程</div>
+        <div><strong>B 端 API 平台</strong>：游戏 API 供应商对接、第三方游戏聚合、白标方案输出，理解 B2B + B2C 结合的业务模式</div>
+        <div><strong>支付 & 链上</strong>：USDT 多链支付（TRC-20/ERC-20/TON）、链上充提、钱包系统设计、风控反洗钱</div>
+        <div><strong>用户增长体系</strong>：首充→留存→复充转化路径设计、VIP 等级体系、代理分润（3-5 层）、裂变增长</div>
+        <div><strong>数据驱动</strong>：ARPU/ARPPU/LTV/留存率等核心指标体系，用数据驱动运营决策</div>
+      </div>
+
+      <div class="cv-section-title">&#127758; 海外市场经验</div>
+      <div class="cv-info-item" style="flex-direction:column; gap:4px;">
+        <div><strong>巴西</strong>：Afun.com 市场渠道开发，25 万注册，$50 万充值</div>
+        <div><strong>菲律宾</strong>：媒体平台运营，年广告收入超 2000 万人民币</div>
+        <div><strong>泰国</strong>：Xthai 新闻网运营，全渠道 3000 万+ 浏览量</div>
+        <div><strong>台湾</strong>：SYGaming 分公司搭建与技术团队管理</div>
+        <div><strong>东南亚</strong>：多语系产品设计（泰/越/印/中/葡/英 6 语言）</div>
+      </div>
+
+      <div class="cv-intro">
+        <strong style="color:var(--primary);">&#11088; 核心优势</strong><br><br>
+        <strong>10 年 iGaming + 互联网行业经验</strong>，横跨平台运营、产品规划、技术团队管理、用户增长全链路。曾独立搭建台湾分公司体系并带领技术团队交付多个核心系统模块。具备<strong>多项目并行统筹</strong>能力，能同时推进平台产品、游戏研发、支付系统、代理体系、媒体运营等多条业务线。深度理解 <strong>B 端 API 供应 + C 端用户运营</strong>的结合模式。在巴西、菲律宾、泰国、台湾等多个海外市场成功落地产品。近年通过 AI 技术赋能业务效率，独立驱动 3 个创新产品从 0 到 1。
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="cv-main">
+
+      <!-- ====== 时间线：由近到远 ====== -->
+
+      <!-- 媒体矩阵 2024 -->
+      <div class="cv-card">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">媒体矩阵项目 — 多平台内容运营</div>
+            <div class="cv-card-role">项目经理 / AI 自动化工作流设计</div>
+          </div>
+          <div class="cv-card-date">2024.10 - 至今</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>搭建 <strong>AI 自动化内容工作流</strong>：Telegram Bot 采集 → AI 改写翻译 → 人工审核 → API 多平台自动分发</li>
+            <li>运营 Xthai 泰国新闻网（全平台官方认证）+ 亚太百事通本地生活服务 TG Mini App</li>
+            <li>建立数据监测与分析机制，根据反馈持续优化内容和投放策略</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">4,000+</div><div class="cv-result-label">网站日活</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">1,000万+</div><div class="cv-result-label">网站总 PV</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">100万+</div><div class="cv-result-label">总用户数</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">3,000万+</div><div class="cv-result-label">全渠道浏览量</div></div>
+        </div>
+      </div>
+
+      <!-- EasyWin 2024 -->
+      <div class="cv-card" style="border-left: 4px solid var(--accent-red);">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">EasyWin — iGaming 平台</div>
+            <div class="cv-card-role">产品负责人 / 用户增长 & 转化优化</div>
+          </div>
+          <div class="cv-card-date">2024</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>基于用户行为数据分析，重构<strong>首充 → 次日留存 → 次日复充</strong>转化路径，明确用户前 48 小时关键决策节点</li>
+            <li>规划并上线<strong>每日限时礼包、首充弹窗、次日礼包倒计时</strong>等激励机制，提升首充后次日活跃与复充意愿</li>
+            <li>调整<strong>奖金提现流水规则（8 倍 → 5 倍）</strong>，兼顾体验的同时优化平台资金回流结构</li>
+            <li>协同技术与运营团队推进功能落地，负责规则设计、需求优先级与效果复盘</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">60%+</div><div class="cv-result-label">次日留存率</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">25-29</div><div class="cv-result-label">ARPU</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">≈25%</div><div class="cv-result-label">次日复充率</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">正向</div><div class="cv-result-label">资金结构优化</div></div>
+        </div>
+      </div>
+
+      <!-- RoyalWynn 2023-2024 -->
+      <div class="cv-card" style="border-left: 4px solid #8b5cf6;">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">RoyalWynn — 线上钢珠机平台</div>
+            <div class="cv-card-role">项目统筹 / 产品规划 & 平台运营</div>
+          </div>
+          <div class="cv-card-date">2023 - 2024</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>完成竞品与市场分析，规划业务流/金流架构，推动<strong>线下机台物联至线上系统</strong>，制定 API 对接方案</li>
+            <li>制定品牌策略与推广时程，统筹项目预算与收支模型，确保项目成本与进度可控</li>
+            <li>同期负责 <strong>Gigbr 巴西盘平台运营</strong>：定位目标用户群，制定用户获取/激活策略，建立客服团队</li>
+            <li>推进功能开发、活动策划、营销渠道拓展，优化渠道投放成本与成效</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">7.7万</div><div class="cv-result-label">注册用户</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">1.3万</div><div class="cv-result-label">首充用户</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">$34万</div><div class="cv-result-label">平台充值</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">18%</div><div class="cv-result-label">注转充比例</div></div>
+        </div>
+      </div>
+
+      <!-- Afun.com 2022-2023 -->
+      <div class="cv-card" style="border-left: 4px solid var(--accent);">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">Afun.com — 巴西市场</div>
+            <div class="cv-card-role">市场负责人 / 渠道开发 & 本地化运营</div>
+          </div>
+          <div class="cv-card-date">2022 - 2023</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>负责广告投放渠道开发及执行追踪，整合<strong>网红投放与代理转化</strong></li>
+            <li>规划并推动<strong>地推活动与品牌赞助</strong>，搭建并管理客服与社群团队</li>
+            <li>深度参与推广活动与产品流程规划，结合数据报表优化用户体验</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">25万</div><div class="cv-result-label">注册用户</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">1万+</div><div class="cv-result-label">首充用户</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">$50万</div><div class="cv-result-label">平台充值</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">$50</div><div class="cv-result-label">ARPPU</div></div>
+        </div>
+      </div>
+
+      <!-- SYGaming 2021-2022 — 大幅展开 -->
+      <div class="cv-card" style="border-left: 4px solid #f59e0b;">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">SYGaming — 台湾分公司</div>
+            <div class="cv-card-role">分公司负责人 / 带领技术团队 / 多项目统筹</div>
+          </div>
+          <div class="cv-card-date">2021 - 2022</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>独立搭建<strong>台湾分公司体系</strong>（团队组建、流程建立、供应商对接），直接向集团汇报</li>
+            <li>带领技术团队，统筹多个核心系统模块的开发与交付，与客户对接需求并协调开发、设计团队推进落地</li>
+          </ul>
+          <div style="margin-top:12px; padding:14px; background:#fffbeb; border-radius:10px; border:1px solid #fde68a;">
+            <div style="font-size:13px; font-weight:700; color:#92400e; margin-bottom:10px;">&#128736; 核心项目交付：</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.8;">
+              <div style="margin-bottom:10px;">
+                <strong style="color:var(--text);">1. 手动彩金派发 → 自动化奖励系统</strong><br>
+                &#8226; 与客户沟通，明确自动化奖励系统的业务需求（触发条件、奖励类型、发放规则）<br>
+                &#8226; 协调开发团队，传达自动化流程需求，确保功能实现与预期一致<br>
+                &#8226; 确保玩家界面直观，与客户确认奖励发放流程符合市场期待（如即时到账）
+              </div>
+              <div style="margin-bottom:10px;">
+                <strong style="color:var(--text);">2. 多语系功能扩展（泰/越/印/中/葡/英 6 语言）</strong><br>
+                &#8226; 与客户讨论，确认多语言支持需求及优先级<br>
+                &#8226; 协调前端、后端及设计团队，确保语言切换功能和内容本地化符合各市场标准
+              </div>
+              <div style="margin-bottom:10px;">
+                <strong style="color:var(--text);">3. 活动任务系统（8 大活动模块）</strong><br>
+                &#8226; 涵盖限时任务、阶段任务树、社交分享、积分活动、轮盘、抽奖券、锦标赛、签到活动<br>
+                &#8226; 与客户确认后台配置需求（活动条件、奖励类型），协助设计直观操作界面<br>
+                &#8226; 确保活动界面和通知方式（如应用内推送）符合客户对玩家体验的期待
+              </div>
+              <div style="margin-bottom:10px;">
+                <strong style="color:var(--text);">4. 后台运营仪表板</strong><br>
+                &#8226; 与客户讨论，明确仪表板功能需求（即时数据监控、玩家行为分析），整理规格<br>
+                &#8226; 协调开发与设计团队，确保数据可视化界面直观且满足客户需求<br>
+                &#8226; 与客户确认关键指标（活跃用户、收入、充值/提现）展示方式，推动用户测试与反馈优化<br>
+                &#8226; 协调权限管理功能实现，确保不同层级运营商仅访问授权数据
+              </div>
+              <div>
+                <strong style="color:var(--text);">5. 代理系统（Affiliate 后台 + 全民 3-5 层代理）</strong><br>
+                &#8226; 与客户确认代理系统需求（推广数据追踪、多层分润），整理功能规格<br>
+                &#8226; 协调开发团队，实现 Affiliate 后台功能（佣金计算、推广链接生成）及 3-5 层代理结构<br>
+                &#8226; 与客户确认后台界面及分润逻辑，确保操作直观且符合业务目标
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">5</div><div class="cv-result-label">核心系统模块</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">6</div><div class="cv-result-label">多语言支持</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">8</div><div class="cv-result-label">活动类型</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">3-5层</div><div class="cv-result-label">代理体系</div></div>
+        </div>
+      </div>
+
+      <!-- Telegram 头条事件 媒体矩阵 2019-2021 -->
+      <div class="cv-card" style="border-left: 4px solid #0098ea;">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">头条事件 — Telegram 媒体矩阵</div>
+            <div class="cv-card-role">媒体矩阵负责人 / 4 人团队 / 内容创业</div>
+          </div>
+          <div class="cv-card-date">2019 - 2021</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>从 0 到 1 搭建<strong>Telegram 中文新闻媒体矩阵</strong>，带领 4 人小团队独立运营，覆盖快讯采集、新闻编辑、内容分发全链路</li>
+            <li>建立<strong>7×24 小时快讯采集机制</strong>，追踪全球热点事件，第一时间产出中文快讯与深度解读，打造高时效性内容品牌</li>
+            <li>搭建<strong>多频道内容矩阵</strong>：快讯频道（即时推送）+ 深度解读频道（长文分析）+ 社群讨论群（用户互动），形成内容消费闭环</li>
+            <li>制定<strong>内容运营 SOP</strong>：选题筛选标准、编辑规范、发布排期、热点响应流程，确保团队高效协作与内容质量稳定</li>
+            <li>探索<strong>自媒体商业化路径</strong>：广告合作、付费社群、品牌赞助等多元变现模式</li>
+            <li>积累了 Telegram 生态运营的深度认知，为后续 Telegram Mini App 产品（LGDLB.io、MR.VIP、亚太百事通）奠定基础</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">$100万+</div><div class="cv-result-label">年收入 (USD)</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">$200万+</div><div class="cv-result-label">合计收入 (USD)</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">4人</div><div class="cv-result-label">核心团队</div></div>
+          <div class="cv-result-chip"><div class="cv-result-value">7×24h</div><div class="cv-result-label">快讯覆盖</div></div>
+        </div>
+      </div>
+
+      <!-- 菲律宾 2018-2020 -->
+      <div class="cv-card" style="border-left: 4px solid var(--primary);">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">菲律宾媒体平台</div>
+            <div class="cv-card-role">运营总监 / 产品迭代 & 团队管理</div>
+          </div>
+          <div class="cv-card-date">2018 - 2020</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>负责论坛产品的<strong>功能迭代、内容运营、广告变现</strong>全链路</li>
+            <li>管理运营团队，建立内容生产与审核 SOP</li>
+            <li>开拓广告资源，优化变现效率，推动年广告收入突破 2000 万</li>
+          </ul>
+        </div>
+        <div class="cv-results-row">
+          <div class="cv-result-chip"><div class="cv-result-value">2,000万+</div><div class="cv-result-label">年广告收入 (RMB)</div></div>
+        </div>
+      </div>
+
+      <!-- 早期经历 2012-2018 — CEO 助理 强调 -->
+      <div class="cv-card" style="border-left: 4px solid var(--primary-dark); background: linear-gradient(135deg, #eff6ff, #ffffff);">
+        <div class="cv-card-header">
+          <div>
+            <div class="cv-card-company">早期经历 — 总裁 / CEO 助理 & 项目管理</div>
+            <div class="cv-card-role" style="color:var(--primary-dark); font-weight:600;">CEO 特别助理 / 项目招商 / 运营管理</div>
+          </div>
+          <div class="cv-card-date">2012 - 2018</div>
+        </div>
+        <div class="cv-card-body">
+          <ul>
+            <li>担任 <strong style="color:var(--primary);">CEO 特别助理</strong>，直接辅助公司高层，负责<strong>全项目进度跟进、跨部门协调、决策信息整合与汇报</strong></li>
+            <li>协助 CEO 统筹多个业务线的日常运营，整理各项目关键数据与进展，提供决策支撑</li>
+            <li>负责重要项目的<strong>招商对接</strong>，从商务谈判、合同签署、资源协调到落地执行全流程跟进</li>
+            <li>实体店运营管理经验，建立标准化运营流程，积累了<strong>团队管理、成本管控、多线程任务并行处理</strong>能力</li>
+          </ul>
+          <div style="margin-top:10px; padding:10px; background:#dbeafe; border-radius:8px; font-size:11px; color:#1e40af;">
+            <strong>&#128161; 与目标岗位的关联：</strong>这段 CEO 助理经历为后续的集团项目统筹工作奠定了基础 — 熟悉<strong>向上汇报机制、多项目并行跟进、跨部门资源调配</strong>的工作模式，具备从全局视角辅助高层推进业务的实战经验。
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div style="margin-top: 10px;">
+        <h3 style="font-size: 18px; margin-bottom: 14px; display:flex; align-items: center; gap: 8px;">
+          <span style="color:var(--primary);">&#9670;</span> 核心能力矩阵
+        </h3>
+        <div class="skill-grid">
+          <div class="skill-item">
+            <div class="skill-item-title">&#128188; 多项目统筹</div>
+            <div class="skill-item-desc">多条业务线并行管理（平台/游戏/支付/代理/媒体）、跨部门协调、资源调配、进度追踪、风险预警、向上汇报</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-title">&#127922; iGaming 行业深度</div>
+            <div class="skill-item-desc">真人视讯/电子游戏/体育/彩票品类理解、API 供应商对接、白标方案、代理分润体系、合规认知</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-title">&#128176; B端+C端结合</div>
+            <div class="skill-item-desc">游戏 API 聚合平台（B端供应）+ 用户端产品运营（C端增长），理解双边业务模式的产品设计与商业逻辑</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-title">&#128202; 数据驱动决策</div>
+            <div class="skill-item-desc">ARPU/ARPPU/LTV/留存率/充值转化等核心指标体系，用数据驱动运营决策与资源分配</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-title">&#127758; 海外多市场落地</div>
+            <div class="skill-item-desc">巴西、菲律宾、泰国、台湾实战经验。多语言产品（6 语言）、本地化支付、跨文化团队管理、分公司搭建</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-title">&#128100; 向上管理 & CEO 特助</div>
+            <div class="skill-item-desc">6 年 CEO 助理经验，擅长全项目进度跟进、决策信息整合、高层汇报、多线程任务并行处理</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== 独立项目负责人 & AI 能力 ====== -->
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 18px; margin-bottom: 14px; display:flex; align-items: center; gap: 8px;">
+          <span style="color:#8b5cf6;">&#9670;</span> 独立项目负责人 & AI 能力
+        </h3>
+        <div style="background: linear-gradient(135deg, #f5f3ff, #ede9fe); border: 1px solid #c4b5fd; border-radius: 12px; padding: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+
+            <!-- 左栏：AI 能力 -->
+            <div style="background: white; border-radius: 10px; padding: 14px; border: 1px solid #e2e8f0;">
+              <div style="font-size: 13px; font-weight: 700; color: #7c3aed; margin-bottom: 6px;">&#129302; AI 工具应用 & 工作流设计</div>
+              <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                &#8226; Prompt Engineering：精准需求描述、边界设定、迭代审核<br>
+                &#8226; AI 内容工作流：采集 → AI 改写翻译 → 审核 → 多平台自动分发（已落地运营）<br>
+                &#8226; AI 模型 API 集成：Function Calling、SSE Streaming、RAG 知识库<br>
+                &#8226; AI 赋能业务效率：内容自动化、智能审核、数据分析提效
+              </div>
+            </div>
+
+            <!-- 右栏：独立项目 -->
+            <div style="background: white; border-radius: 10px; padding: 14px; border: 1px solid #e2e8f0;">
+              <div style="font-size: 13px; font-weight: 700; color: #7c3aed; margin-bottom: 6px;">&#128640; 独立项目负责人 — 从 0 到 1 交付</div>
+              <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                &#8226; <strong>MR.VIP</strong>：TG iGaming 金融生态（USDT 多链钱包、盘口聚合 API、VIP 返水、红包裂变、Web3 支付名片）<span style="display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:white;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:600;margin-left:4px;">B+C</span><br>
+                &#8226; <strong>Feel.Trading</strong>：AI 量化交易平台（市场调研→PRD→原型→架构→MVP 全流程）<br>
+                &#8226; <strong>Sports.game</strong>：AI 体育预测平台（10 大运动、XAI 可解释预测、区块链认证）<br>
+                &#8226; <strong>LGDLB.io</strong>：AI 社区平台（TG Mini App、预测市场、TON 支付、131 次 DB 迭代）<br>
+                &#8226; 通过 AI 协作驱动技术实现，具备完整的产品规划→落地→运营全链路能力
+              </div>
+            </div>
+          </div>
+
+          <!-- 标签 -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: white; border: 1px solid #c4b5fd; color: #7c3aed; padding: 3px 12px; border-radius: 20px; font-size: 11px;">Prompt Engineering</span>
+            <span style="background: white; border: 1px solid #c4b5fd; color: #7c3aed; padding: 3px 12px; border-radius: 20px; font-size: 11px;">Function Calling</span>
+            <span style="background: white; border: 1px solid #c4b5fd; color: #7c3aed; padding: 3px 12px; border-radius: 20px; font-size: 11px;">AI Agent 工作流</span>
+            <span style="background: white; border: 1px solid #c4b5fd; color: #7c3aed; padding: 3px 12px; border-radius: 20px; font-size: 11px;">RAG 知识库</span>
+            <span style="background: white; border: 1px solid #c4b5fd; color: #7c3aed; padding: 3px 12px; border-radius: 20px; font-size: 11px;">AI 内容自动化</span>
+            <span style="background: white; border: 1px solid #fde68a; color: #f59e0b; padding: 3px 12px; border-radius: 20px; font-size: 11px;">USDT 多链钱包</span>
+            <span style="background: white; border: 1px solid #fde68a; color: #f59e0b; padding: 3px 12px; border-radius: 20px; font-size: 11px;">盘口聚合 API</span>
+            <span style="background: white; border: 1px solid #fde68a; color: #f59e0b; padding: 3px 12px; border-radius: 20px; font-size: 11px;">Web3 支付</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================= -->
+<!-- TAB 2: PORTFOLIO -->
+<!-- ========================================= -->
+<div id="tab-portfolio" class="tab-content">
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="switchSub('proj-feel')">Feel.Trading AI 交易平台</button>
+    <button class="sub-tab" onclick="switchSub('proj-sports')">Sports.game AI 预测</button>
+    <button class="sub-tab" onclick="switchSub('proj-tgbbs')">LGDLB.io AI 社区平台</button>
+    <button class="sub-tab" onclick="switchSub('proj-mrvip')">MR.VIP TG 金融生态</button>
+  </div>
+
+  <!-- ===== Feel.Trading ===== -->
+  <div id="sub-proj-feel" class="sub-content active">
+    <div class="project-header">
+      <div class="project-icon" style="background: linear-gradient(135deg, #2563eb, #7c3aed);">FT</div>
+      <div>
+        <h2>Feel.Trading — AI 直觉量化交易平台</h2>
+        <p>用自然语言描述交易直觉 → AI 归因分解 → 历史回测 → 自动执行</p>
+        <div style="margin-top: 6px;">
+          <span class="project-tag">AI 模型 API</span>
+          <span class="project-tag">Function Calling</span>
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Binance API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Dashboard -->
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <div class="metric-label">AI 归因条件</div>
+        <div class="metric-value">78</div>
+        <div class="metric-change metric-up">16 个类别覆盖</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">技术指标</div>
+        <div class="metric-value">85</div>
+        <div class="metric-change metric-up">27 基础 + pandas-ta 扩展</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">支持交易对</div>
+        <div class="metric-value">22</div>
+        <div class="metric-change">加密货币 / 贵金属 / 外汇</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">历史数据</div>
+        <div class="metric-value">620天</div>
+        <div class="metric-change metric-up">1m + 5m K线全量</div>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <div class="panel" style="margin-bottom: 16px;">
+      <div class="panel-title"><span class="dot"></span> 核心 AI 工作流架构</div>
+      <div class="arch-flow">
+        <div class="arch-node">&#128172; 用户输入<br><small>"我觉得BTC要涨"</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node" style="background:#ede9fe; border-color:#8b5cf6; color:#5b21b6;">&#129302; AI 模型<br><small>意图识别 + 归因</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node green">&#128202; 78 条件映射<br><small>RSI/MACD/情绪...</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#128200; 回测引擎<br><small>历史验证</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node" style="background:#fce7f3; border-color:#ec4899; color:#9d174d;">&#9889; 自动执行<br><small>Binance API</small></div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <!-- AI Attribution Engine -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot"></span> AI 归因引擎 — 条件分布</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">技术指标</div>
+            <div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--primary);">RSI/MACD/EMA...</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">链上数据</div>
+            <div class="bar-track"><div class="bar-fill" style="width:55%;background:#8b5cf6;">鲸鱼/交易所流量</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">市场情绪</div>
+            <div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent);">恐贪指数/社交</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">宏观事件</div>
+            <div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--accent-orange);">NFP/CPI/利率</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">市场结构</div>
+            <div class="bar-track"><div class="bar-fill" style="width:35%;background:#ec4899;">期权到期/CME缺口</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">特殊因子</div>
+            <div class="bar-track"><div class="bar-fill" style="width:20%;background:#64748b;">月相/日历/季节</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backtest Results -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot"></span> 回测引擎监控面板</div>
+        <div class="status-grid">
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>条件回测引擎</span>
+            <span style="color:var(--accent);font-weight:600;">58 evaluators Active</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>DSL 脚本引擎</span>
+            <span style="color:var(--accent);font-weight:600;">SL/TP/Trailing OK</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>自定义 Python 引擎</span>
+            <span style="color:var(--accent);font-weight:600;">Sandbox Ready</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>策略监控器</span>
+            <span style="color:var(--accent);font-weight:600;">5min Interval</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Binance Testnet</span>
+            <span style="color:var(--accent);font-weight:600;">Connected</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>数据更新 Pipeline</span>
+            <span style="color:var(--accent);font-weight:600;">06:00 UTC Daily</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <!-- AI 模型 API Integration -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#8b5cf6;"></span> AI 模型 API 集成设计</div>
+        <table class="data-table">
+          <thead><tr><th>Tool Name</th><th>功能</th><th>触发场景</th></tr></thead>
+          <tbody>
+            <tr><td><code>get_realtime_data</code></td><td>获取实时行情数据</td><td>用户询问当前价格</td></tr>
+            <tr><td><code>run_backtest</code></td><td>执行策略回测</td><td>用户确认条件后</td></tr>
+            <tr><td><code>create_strategy</code></td><td>创建自动策略</td><td>回测结果满意时</td></tr>
+            <tr><td><code>save_unmatched</code></td><td>保存未匹配因子</td><td>发现新交易信号</td></tr>
+            <tr><td><code>simulate_trades</code></td><td>模拟交易执行</td><td>策略激活后</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:10px; font-size:11px; color:var(--text-secondary);">
+          <strong>3 种 System Prompt 模式：</strong>教学模式（带概念解释卡片）、简洁模式（直接执行）、卡片构建模式（策略可视化）
+        </div>
+      </div>
+
+      <!-- Revenue Model -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:var(--accent-orange);"></span> 商业模型设计</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">交易所分润</div>
+            <div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--primary);">55% — 用户交易手续费分成</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">SaaS 订阅</div>
+            <div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--accent);">30% — Free/$29/$99 三档</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">数据服务</div>
+            <div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--accent-orange);">15% — 高级数据源订阅</div></div>
+          </div>
+        </div>
+        <div style="margin-top:14px; padding:10px; background:#f0fdf4; border-radius:8px; font-size:11px; color:#065f46;">
+          <strong>&#127919; Seed 轮目标：</strong>$1.5M / 18个月跑道 → 10K MAU<br>
+          <strong>&#128200; TAM/SAM/SOM：</strong>$12B / $3.2B / $180M（亚太中文市场）
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Sports.game ===== -->
+  <div id="sub-proj-sports" class="sub-content">
+    <div class="project-header">
+      <div class="project-icon" style="background: linear-gradient(135deg, #059669, #10b981);">SG</div>
+      <div>
+        <h2>Sports.game — AI 体育赛事预测分析平台</h2>
+        <p>XAI 可解释 AI 预测 &middot; 10 大运动覆盖 &middot; 认证大师系统 &middot; 区块链验证</p>
+        <div style="margin-top: 6px;">
+          <span class="project-tag">XGBoost/LightGBM</span>
+          <span class="project-tag">SHAP XAI</span>
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">Go</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Arbitrum L2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <div class="metric-label">覆盖运动</div>
+        <div class="metric-value">10</div>
+        <div class="metric-change">足球/NBA/NFL/MLB/网球...</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">设计容量</div>
+        <div class="metric-value">6,000+</div>
+        <div class="metric-change">QPS 高并发架构</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">目标 DAU</div>
+        <div class="metric-value">500K-1M</div>
+        <div class="metric-change metric-up">面向全球用户</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">前端组件</div>
+        <div class="metric-value">50+</div>
+        <div class="metric-change">各运动专属可视化</div>
+      </div>
+    </div>
+
+    <!-- XAI Architecture -->
+    <div class="panel" style="margin-bottom: 16px;">
+      <div class="panel-title"><span class="dot" style="background:#059669;"></span> XAI 可解释 AI 预测架构</div>
+      <div class="arch-flow">
+        <div class="arch-node green">&#128202; 多源数据<br><small>赛程/历史/伤病/天气</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node" style="background:#ede9fe; border-color:#8b5cf6; color:#5b21b6;">&#129302; ML 模型<br><small>XGBoost + LightGBM</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#128270; SHAP 归因<br><small>特征权重计算</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node">&#128202; 瀑布图<br><small>可视化决策过程</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node" style="background:#dbeafe; border-color:var(--primary); color:var(--primary-dark);">&#127919; 用户决策<br><small>知其然 知其所以然</small></div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#059669;"></span> 10 大运动 — 专项分析能力</div>
+        <table class="data-table">
+          <thead><tr><th>运动</th><th>AI 分析特色</th><th>数据源</th></tr></thead>
+          <tbody>
+            <tr><td>&#9917; 足球</td><td>Poisson 热力图、xG 对比、阵型分析</td><td>API-Football</td></tr>
+            <tr><td>&#127936; NBA</td><td>Pace 效率值、Dean Oliver 四因素雷达图</td><td>nba_api</td></tr>
+            <tr><td>&#127944; NFL</td><td>壕沟战力分析、红区效率、3rd Down</td><td>ESPN API</td></tr>
+            <tr><td>&#9918; MLB</td><td>球路组合分析、打线分析、局别分解</td><td>MLB Stats</td></tr>
+            <tr><td>&#127934; 网球</td><td>Markov 链模型、压力表现指数</td><td>Tennis API</td></tr>
+            <tr><td>&#127954; F1</td><td>赛道适应性、轮胎策略模拟</td><td>Ergast/OpenF1</td></tr>
+            <tr><td>&#127951; 板球</td><td>IPL/T20 预测模型</td><td>CricAPI</td></tr>
+            <tr><td>&#127919; 电竞</td><td>LoL/CS2/Dota2 对战分析</td><td>PandaScore</td></tr>
+            <tr><td>&#127935; 冰球</td><td>Corsi/Fenwick 高阶数据</td><td>NHL API</td></tr>
+            <tr><td>&#127943; 赛马</td><td>赛道/天气/血统综合预测</td><td>Racing API</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:var(--accent-orange);"></span> 系统架构设计亮点</div>
+        <div class="status-grid">
+          <div class="status-row">
+            <span><strong>API 网关</strong></span>
+            <span>Kong / Nginx + Lua</span>
+          </div>
+          <div class="status-row">
+            <span><strong>后端语言</strong></span>
+            <span>Go（高并发微服务）</span>
+          </div>
+          <div class="status-row">
+            <span><strong>ML 服务</strong></span>
+            <span>Python FastAPI + uvicorn</span>
+          </div>
+          <div class="status-row">
+            <span><strong>消息队列</strong></span>
+            <span>Apache Kafka</span>
+          </div>
+          <div class="status-row">
+            <span><strong>时序分析</strong></span>
+            <span>ClickHouse (250万/日)</span>
+          </div>
+          <div class="status-row">
+            <span><strong>区块链</strong></span>
+            <span>Arbitrum L2（低Gas验证）</span>
+          </div>
+          <div class="status-row">
+            <span><strong>搜索引擎</strong></span>
+            <span>Meilisearch</span>
+          </div>
+          <div class="status-row">
+            <span><strong>CDN/安全</strong></span>
+            <span>Cloudflare（DDoS/WAF）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin + AI Dashboard Mockup -->
+    <div class="panel" style="margin-top:16px;">
+      <div class="panel-title"><span class="dot" style="background:#059669;"></span> 后台管理 + AI 预测面板 — admin.sports.game</div>
+      <div style="background:#1e293b; border-radius:10px; padding:16px; font-size:11px; color:#e2e8f0; overflow-x:auto;">
+        <!-- Admin Nav -->
+        <div style="display:flex; gap:4px; margin-bottom:14px; border-bottom:1px solid #334155; padding-bottom:10px;">
+          <span style="background:#059669; padding:4px 12px; border-radius:6px; color:white; font-size:10px; font-weight:600;">Dashboard</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">赛事管理</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">AI 模型</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">认证大师</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">用户管理</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">币经济</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">新闻管理</span>
+        </div>
+
+        <!-- KPI Row -->
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:14px;">
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">注册用户</div>
+            <div style="font-size:20px; font-weight:700; color:white;">12,840</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; +342 今日</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">今日预测</div>
+            <div style="font-size:20px; font-weight:700; color:white;">5,621</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; +18% vs 昨日</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">AI 准确率</div>
+            <div style="font-size:20px; font-weight:700; color:#10b981;">67.3%</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; 近 30 天</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">今日赛事</div>
+            <div style="font-size:20px; font-weight:700; color:white;">38</div>
+            <div style="font-size:9px; color:#f59e0b;">足球 14 / NBA 8 / 其他 16</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">认证大师</div>
+            <div style="font-size:20px; font-weight:700; color:white;">156</div>
+            <div style="font-size:9px; color:#10b981;">链上记录 4,230 条</div>
+          </div>
+        </div>
+
+        <!-- Two columns -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <!-- AI Model Performance -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#129302; AI 模型准确率 — 各运动分项</div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#9917; 足球</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:71%; height:100%; background:linear-gradient(90deg,#059669,#10b981); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">71.2%</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#127936; NBA</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:68%; height:100%; background:linear-gradient(90deg,#059669,#10b981); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">68.5%</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#127934; 网球</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:72%; height:100%; background:linear-gradient(90deg,#059669,#10b981); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">72.1%</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#127944; NFL</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:64%; height:100%; background:linear-gradient(90deg,#2563eb,#60a5fa); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">64.0%</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#9918; MLB</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:61%; height:100%; background:linear-gradient(90deg,#2563eb,#60a5fa); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">61.8%</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; padding:4px 0; font-size:10px;">
+              <span style="width:55px;">&#127954; F1</span>
+              <div style="flex:1; background:#475569; border-radius:4px; height:12px; margin:0 8px; overflow:hidden;">
+                <div style="width:74%; height:100%; background:linear-gradient(90deg,#059669,#10b981); border-radius:4px; display:flex; align-items:center; padding-left:4px; font-size:8px; color:white; font-weight:600;">74.3%</div>
+              </div>
+            </div>
+            <div style="margin-top:6px; font-size:9px; color:#64748b;">模型: XGBoost + LightGBM | 上次训练: 2h 前 | 特征: 120+</div>
+          </div>
+
+          <!-- Today's Matches -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#127941; 今日热门赛事 — AI 预测结果</div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#9917; 曼城 vs 利物浦</span>
+              <span style="color:#10b981;">AI: 主胜 52% | 置信度 High</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#127936; 湖人 vs 凯尔特人</span>
+              <span style="color:#f59e0b;">AI: 客胜 58% | 置信度 Med</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#127934; 辛纳 vs 阿尔卡拉斯</span>
+              <span style="color:#10b981;">AI: 主胜 61% | 置信度 High</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#9917; 巴萨 vs 皇马</span>
+              <span style="color:#ef4444;">AI: 平局 38% | 置信度 Low</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:10px;">
+              <span>&#127944; Chiefs vs Eagles</span>
+              <span style="color:#10b981;">AI: 主胜 55% | 置信度 High</span>
+            </div>
+            <div style="margin-top:8px; font-size:9px; color:#64748b;">
+              SHAP 归因已生成 | 用户预测 5,621 条 | 虚拟币流通 128K
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom: Certified Masters + Coin Economy -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#128081; 认证大师排行 — 链上验证</div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#129351; MasterLee <span style="color:#f59e0b; font-size:8px;">Tier 3</span></span>
+              <span style="color:#10b981;">胜率 73.2% | 284 预测</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#129352; BetKing88 <span style="color:#94a3b8; font-size:8px;">Tier 2</span></span>
+              <span style="color:#10b981;">胜率 69.8% | 421 预测</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>&#129353; ProAnalyst <span style="color:#94a3b8; font-size:8px;">Tier 2</span></span>
+              <span style="color:#10b981;">胜率 68.1% | 198 预测</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:10px;">
+              <span>4. SoccerGuru <span style="color:#cd7f32; font-size:8px;">Tier 1</span></span>
+              <span style="color:#60a5fa;">胜率 66.4% | 512 预测</span>
+            </div>
+            <div style="margin-top:6px; font-size:9px; color:#64748b;">Arbitrum L2 | 已上链 4,230 条预测 | Gas 费 &lt; $0.01</div>
+          </div>
+
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#128176; 虚拟币经济系统</div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>币流通总量</span>
+              <span style="color:white; font-weight:600;">128,420</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>今日发放（注册+签到+预测）</span>
+              <span style="color:#10b981;">+8,240</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>今日消耗（投注+解锁分析）</span>
+              <span style="color:#ef4444;">-6,180</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>净增发</span>
+              <span style="color:#f59e0b;">+2,060（健康范围）</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:10px;">
+              <span>KYC 验证完成</span>
+              <span style="color:white;">3,241 人 (25.2%)</span>
+            </div>
+            <div style="margin-top:6px; font-size:9px; color:#64748b;">通胀率 1.6%/日 | 目标 &lt; 2% | 经济模型健康</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LGDLB.io ===== -->
+  <div id="sub-proj-tgbbs" class="sub-content">
+    <div class="project-header">
+      <div class="project-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">LG</div>
+      <div>
+        <h2>LGDLB.io — AI 驱动社区产品平台 <span class="badge-ai">AI Product</span></h2>
+        <p>AI 内容审核 &middot; AI 预测市场 &middot; AI 用户增长 &middot; Telegram Mini App &middot; TON 区块链支付</p>
+        <div style="margin-top: 6px;">
+          <span class="project-tag">AI Moderation</span>
+          <span class="project-tag">Go Fiber</span>
+          <span class="project-tag">Svelte 5</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">TON Chain</span>
+          <span class="project-tag">LINE Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <div class="metric-label">数据库迁移</div>
+        <div class="metric-value">131</div>
+        <div class="metric-change metric-up">完整版本控制</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">安全审计</div>
+        <div class="metric-value">4 轮</div>
+        <div class="metric-change metric-up">59/61 问题修复</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Handler 模块</div>
+        <div class="metric-value">33</div>
+        <div class="metric-change">完整 API 覆盖</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">成就系统</div>
+        <div class="metric-value">34+</div>
+        <div class="metric-change">4 大类别</div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:var(--accent-orange);"></span> 系统服务监控</div>
+        <div class="status-grid">
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Main API (8080)</span>
+            <span style="color:var(--accent);font-weight:600;">Running</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Payment Service (8081)</span>
+            <span style="color:var(--accent);font-weight:600;">Running</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Telegram Bot</span>
+            <span style="color:var(--accent);font-weight:600;">Running</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>PostgreSQL</span>
+            <span style="color:var(--accent);font-weight:600;">Connected</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Redis Cache</span>
+            <span style="color:var(--accent);font-weight:600;">Connected</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>TON Chain Monitor</span>
+            <span style="color:var(--accent);font-weight:600;">30s Polling</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>SEO Crawler</span>
+            <span style="color:var(--accent);font-weight:600;">4 Sitemaps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:var(--accent-red);"></span> 安全审计结果</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">认证安全</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent);">PASS — HMAC-SHA256</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">XSS 防护</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent);">PASS — DOMPurify</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">金融原子性</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent);">PASS — DB Transaction</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">双重支付</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent);">PASS — tx_hash UNIQUE</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">速率限制</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent);">PASS — Rate Limit</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">WS Token</div>
+            <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent-orange);">DEFERRED — 架构升级中</div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-secondary);">
+          审计修复率：<strong style="color:var(--accent);">96.7%</strong>（59/61 issues resolved）
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-title"><span class="dot"></span> 预测市场系统</div>
+        <div class="arch-flow">
+          <div class="arch-node">&#128221; 创建预测<br><small>2-10 个选项</small></div>
+          <div class="arch-arrow">&#10132;</div>
+          <div class="arch-node green">&#128176; AMM 定价<br><small>实时赔率计算</small></div>
+          <div class="arch-arrow">&#10132;</div>
+          <div class="arch-node orange">&#128274; 投注冻结<br><small>原子交易</small></div>
+          <div class="arch-arrow">&#10132;</div>
+          <div class="arch-node red">&#9878; 自动结算<br><small>原子分配收益</small></div>
+        </div>
+        <table class="data-table" style="margin-top:10px;">
+          <thead><tr><th>功能模块</th><th>状态</th><th>技术实现</th></tr></thead>
+          <tbody>
+            <tr><td>预测创建</td><td style="color:var(--accent);">&#10003; 完成</td><td>审核 → 开放 → 关闭 → 结算</td></tr>
+            <tr><td>AMM 定价</td><td style="color:var(--accent);">&#10003; 完成</td><td>自动做市商赔率算法</td></tr>
+            <tr><td>投注系统</td><td style="color:var(--accent);">&#10003; 完成</td><td>积分冻结 + DB 事务</td></tr>
+            <tr><td>自动结算</td><td style="color:var(--accent);">&#10003; 完成</td><td>原子化收益分配</td></tr>
+            <tr><td>争议处理</td><td style="color:var(--accent);">&#10003; 完成</td><td>管理员介入机制</td></tr>
+            <tr><td>排行榜</td><td style="color:var(--accent);">&#10003; 完成</td><td>收益/胜率/连胜</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#f59e0b;"></span> 支付系统架构</div>
+        <div class="status-grid" style="margin-bottom:14px;">
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>TON 链上充值</span>
+            <span style="color:var(--accent);">&#10003; 生产就绪</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>Telegram Stars</span>
+            <span style="color:var(--accent);">&#10003; 生产就绪</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-online"></span>LINE Pay</span>
+            <span style="color:var(--accent);">&#10003; Sandbox</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot status-warning"></span>提现系统</span>
+            <span style="color:var(--accent-orange);">后端完成 / 前端开发中</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--text-secondary);padding:10px;background:#f8fafc;border-radius:8px;">
+          <strong>安全机制：</strong><br>
+          &#8226; TON 充值：静态地址 + QR 码 → 30秒轮询链上确认 → tx_hash UNIQUE 防双花<br>
+          &#8226; 订单超时：30分钟自动过期<br>
+          &#8226; 微服务隔离：支付服务(8081) 独立于主 API(8080)
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard Mockup -->
+    <div class="panel" style="margin-top:16px;">
+      <div class="panel-title"><span class="dot" style="background:var(--primary);"></span> 后台管理面板 — admin.lgjlb.io</div>
+      <div style="background:#1e293b; border-radius:10px; padding:16px; font-size:11px; color:#e2e8f0; overflow-x:auto;">
+        <!-- Admin Nav -->
+        <div style="display:flex; gap:4px; margin-bottom:14px; border-bottom:1px solid #334155; padding-bottom:10px;">
+          <span style="background:#2563eb; padding:4px 12px; border-radius:6px; color:white; font-size:10px; font-weight:600;">Dashboard</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">用户管理</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">内容审核</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">预测管理</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">支付管理</span>
+          <span style="background:#334155; padding:4px 12px; border-radius:6px; font-size:10px;">系统设置</span>
+        </div>
+
+        <!-- KPI Row -->
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:14px;">
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">注册用户</div>
+            <div style="font-size:20px; font-weight:700; color:white;">3,842</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; +127 今日</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">日活用户</div>
+            <div style="font-size:20px; font-weight:700; color:white;">856</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; 22.3% DAU</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">今日发帖</div>
+            <div style="font-size:20px; font-weight:700; color:white;">234</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; AI 审核 98%</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">预测市场</div>
+            <div style="font-size:20px; font-weight:700; color:white;">47</div>
+            <div style="font-size:9px; color:#f59e0b;">12 进行中</div>
+          </div>
+          <div style="background:#334155; border-radius:8px; padding:10px; text-align:center;">
+            <div style="font-size:9px; color:#94a3b8;">今日充值</div>
+            <div style="font-size:20px; font-weight:700; color:white;">$2,180</div>
+            <div style="font-size:9px; color:#10b981;">&#9650; TON + Stars</div>
+          </div>
+        </div>
+
+        <!-- Two columns -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <!-- Recent Content Moderation -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#128301; AI 内容审核队列</div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>用户 @chen_88 发帖</span>
+              <span style="background:#065f46; color:#86efac; padding:1px 6px; border-radius:8px;">AI 通过</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>用户 @lucky_dog 评论</span>
+              <span style="background:#065f46; color:#86efac; padding:1px 6px; border-radius:8px;">AI 通过</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>用户 @vip_player 发帖</span>
+              <span style="background:#7f1d1d; color:#fca5a5; padding:1px 6px; border-radius:8px;">AI 拦截</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>用户 @new_user01 发帖</span>
+              <span style="background:#78350f; color:#fde68a; padding:1px 6px; border-radius:8px;">待人工审核</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; font-size:10px;">
+              <span>用户 @trader_wang 评论</span>
+              <span style="background:#065f46; color:#86efac; padding:1px 6px; border-radius:8px;">AI 通过</span>
+            </div>
+            <div style="margin-top:8px; font-size:9px; color:#64748b;">今日审核 234 条 | AI 自动通过 218 | 拦截 11 | 待审核 5</div>
+          </div>
+
+          <!-- Payment Monitoring -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#128176; 支付流水监控</div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>TON 充值 <span style="color:#0098ea;">+50 TON</span></span>
+              <span style="color:#10b981;">&#10003; 确认</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>TG Stars <span style="color:#f59e0b;">+500 Stars</span></span>
+              <span style="color:#10b981;">&#10003; 确认</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>TON 充值 <span style="color:#0098ea;">+120 TON</span></span>
+              <span style="color:#10b981;">&#10003; 确认</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>提现申请 <span style="color:#ef4444;">-200 LGC</span></span>
+              <span style="color:#f59e0b;">&#9679; 待审核</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:6px 0; font-size:10px;">
+              <span>LINE Pay <span style="color:#10b981;">+&yen;3,000</span></span>
+              <span style="color:#10b981;">&#10003; 确认</span>
+            </div>
+            <div style="margin-top:8px; font-size:9px; color:#64748b;">今日充值 $2,180 | 提现待审 3 笔 | 异常 0 笔</div>
+          </div>
+        </div>
+
+        <!-- Bottom: Prediction Market + User Levels -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+          <!-- Active Predictions -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#127919; 预测市场活跃赛事</div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>BTC 月底能破 10 万？</span>
+              <span style="color:#10b981;">进行中 | 投注 1,240 LGC</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>下一任美联储主席是谁</span>
+              <span style="color:#10b981;">进行中 | 投注 860 LGC</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>2026 世界杯冠军预测</span>
+              <span style="color:#10b981;">进行中 | 投注 3,500 LGC</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:10px;">
+              <span>ETH 合并后首次创新高</span>
+              <span style="color:#64748b;">已结算 | 派奖 2,100 LGC</span>
+            </div>
+          </div>
+
+          <!-- User Achievement Stats -->
+          <div style="background:#334155; border-radius:8px; padding:12px;">
+            <div style="font-size:11px; font-weight:600; margin-bottom:8px; color:#94a3b8;">&#127942; 用户等级 & 成就系统</div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>Lv.0 新手</span>
+              <div style="flex:1; margin:0 8px; background:#475569; border-radius:4px; height:8px; overflow:hidden;"><div style="width:65%; height:100%; background:#64748b; border-radius:4px;"></div></div>
+              <span>2,504 人 (65%)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>Lv.1 入门</span>
+              <div style="flex:1; margin:0 8px; background:#475569; border-radius:4px; height:8px; overflow:hidden;"><div style="width:20%; height:100%; background:#3b82f6; border-radius:4px;"></div></div>
+              <span>769 人 (20%)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>Lv.2 活跃</span>
+              <div style="flex:1; margin:0 8px; background:#475569; border-radius:4px; height:8px; overflow:hidden;"><div style="width:10%; height:100%; background:#10b981; border-radius:4px;"></div></div>
+              <span>384 人 (10%)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #475569; font-size:10px;">
+              <span>Lv.3 核心</span>
+              <div style="flex:1; margin:0 8px; background:#475569; border-radius:4px; height:8px; overflow:hidden;"><div style="width:4%; height:100%; background:#f59e0b; border-radius:4px;"></div></div>
+              <span>154 人 (4%)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:10px;">
+              <span>Lv.4-5 VIP</span>
+              <div style="flex:1; margin:0 8px; background:#475569; border-radius:4px; height:8px; overflow:hidden;"><div style="width:1%; height:100%; background:#ef4444; border-radius:4px;"></div></div>
+              <span>31 人 (1%)</span>
+            </div>
+            <div style="margin-top:8px; font-size:9px; color:#64748b;">已解锁成就总数 4,521 | 今日新解锁 89</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MR.VIP ===== -->
+  <div id="sub-proj-mrvip" class="sub-content">
+    <div class="project-header">
+      <div class="project-icon" style="background: linear-gradient(135deg, #92400e, #f59e0b);">MR</div>
+      <div>
+        <h2>MR.VIP — Telegram iGaming 金融生态</h2>
+        <p>TG 钱包 + Web3 支付名片 + 盘口聚合 + VIP 返水 + 红包裂变 + 三级佣金</p>
+        <div style="margin-top: 6px;">
+          <span class="project-tag">Telegram Mini App</span>
+          <span class="project-tag">USDT Wallet</span>
+          <span class="project-tag">Web3 Payment</span>
+          <span class="project-tag">ENS Domain</span>
+          <span class="project-tag">Multi-Chain</span>
+          <span class="project-tag">TON</span>
+        </div>
+      </div>
+    </div>
+
+  <!-- Core Thesis -->
+  <div class="proposal-section" style="border-left: 4px solid #f59e0b; background: #fffbeb;">
+    <h3>&#128161; 产品核心洞察：Telegram iGaming 生态缺少什么？</h3>
+    <p style="font-size:13px; color:var(--text); line-height:1.9; margin-bottom:14px;">
+      Telegram 已成为全球 iGaming 用户最活跃的社交平台，但用户面临一个核心痛点：<strong>资金分散在多个盘口，没有统一的钱包和身份体系。</strong>
+    </p>
+    <div class="flow-container" style="background:#fef3c7;">
+      <div style="text-align:center; font-size:12px; color:#92400e; margin-bottom:10px;">&#128148; 当前 TG iGaming 用户的痛点</div>
+      <div class="flow-row">
+        <div class="flow-node" style="background:#fee2e2; border-color:#ef4444; color:#991b1b;">盘口 A<br><small>充值 → 玩 → 提款</small></div>
+        <div class="arch-arrow">&#10007;</div>
+        <div class="flow-node" style="background:#fee2e2; border-color:#ef4444; color:#991b1b;">盘口 B<br><small>再充值 → 再玩</small></div>
+        <div class="arch-arrow">&#10007;</div>
+        <div class="flow-node" style="background:#fee2e2; border-color:#ef4444; color:#991b1b;">盘口 C<br><small>资金分散</small></div>
+      </div>
+      <div style="text-align:center; font-size:11px; color:var(--accent-red); margin-top:8px;">资金分散 &middot; 无统一身份 &middot; 无额外返利 &middot; 引流靠群主人工喊话</div>
+    </div>
+
+    <div class="flow-container" style="background:#f0fdf4; margin-top:10px;">
+      <div style="text-align:center; font-size:12px; color:#065f46; margin-bottom:10px;">&#9989; MR.VIP 的解决方案</div>
+      <div class="flow-row">
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#128176; USDT 钱包<br><small>统一资金入口</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#127922; 盘口聚合<br><small>一键进入所有盘口</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#128081; VIP 返水<br><small>额外 0.3%~1.5%</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#129511; 红包裂变<br><small>群内自动获客</small></div>
+      </div>
+      <div style="text-align:center; font-size:11px; color:#065f46; margin-top:8px;"><strong>一个钱包 + 一个身份 + 所有盘口 + 自动裂变</strong></div>
+    </div>
+  </div>
+
+  <!-- Product 1: TMA Wallet -->
+  <div class="proposal-section">
+    <h3 style="color:#f59e0b;">&#128176; 产品一：MR.VIP TG 钱包生态（Telegram Mini App）</h3>
+    <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+      基于 Telegram Mini App 的 USDT 钱包 + iGaming 生态聚合平台，一个钱包接入所有合作盘口。
+    </p>
+
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <div class="metric-label">目标用户</div>
+        <div class="metric-value">100K+</div>
+        <div class="metric-change">TG 生态博彩用户</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">月交易量</div>
+        <div class="metric-value">$50M+</div>
+        <div class="metric-change">USDT 月目标</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">核心模块</div>
+        <div class="metric-value">6</div>
+        <div class="metric-change">钱包/红包/盘口/VIP/服务/裂变</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">佣金体系</div>
+        <div class="metric-value">3 级</div>
+        <div class="metric-change">30% / 10% / 5%</div>
+      </div>
+    </div>
+
+    <div class="panel-grid">
+      <!-- Six Features -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#f59e0b;"></span> 六大核心功能</div>
+        <div class="status-grid">
+          <div class="status-row"><span>&#128188; <strong>USDT 钱包</strong></span><span>多链资产管理 (USDT/TRX/TON)</span></div>
+          <div class="status-row"><span>&#129511; <strong>TG 群红包</strong></span><span>拼手气/固定/口令/红包雨</span></div>
+          <div class="status-row"><span>&#127922; <strong>盘口聚合</strong></span><span>资质审核后的精选盘口</span></div>
+          <div class="status-row"><span>&#128081; <strong>VIP 返水</strong></span><span>Silver 0.3% → Gold 0.8% → Diamond 1.5%</span></div>
+          <div class="status-row"><span>&#128241; <strong>生活服务</strong></span><span>东南亚 8 国话费 + 闪兑 + U 卡</span></div>
+          <div class="status-row"><span>&#128101; <strong>裂变增长</strong></span><span>三级佣金 30%/10%/5%</span></div>
+        </div>
+      </div>
+
+      <!-- TMA Wallet UI Mockup -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#f59e0b;"></span> TMA 钱包 UI 原型</div>
+        <div style="background:#0a0a1a; border-radius:14px; padding:16px; font-size:12px; color:#e2e8f0; max-width:280px; margin:0 auto;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+            <span style="font-weight:700; font-size:14px;">MR.<span style="color:#f59e0b;">VIP</span></span>
+            <span style="font-size:12px;">&#128276;</span>
+          </div>
+          <div style="background:linear-gradient(135deg, #1e293b, #334155); border-radius:12px; padding:14px; margin-bottom:10px; text-align:center;">
+            <div style="font-size:10px; color:#94a3b8;">总资产 (USD)</div>
+            <div style="font-size:22px; font-weight:700; margin:4px 0;">$12,580.50</div>
+            <div style="font-size:9px; color:#64748b;">&asymp; &yen;91,836.65</div>
+            <div style="display:flex; gap:6px; margin-top:10px; justify-content:center;">
+              <span style="background:rgba(255,255,255,0.1); padding:4px 14px; border-radius:20px; font-size:10px;">充值</span>
+              <span style="background:rgba(255,255,255,0.1); padding:4px 14px; border-radius:20px; font-size:10px;">提币</span>
+              <span style="background:rgba(255,255,255,0.1); padding:4px 14px; border-radius:20px; font-size:10px;">转账</span>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px; padding:6px 10px; background:rgba(202,138,4,0.1); border-radius:8px; margin-bottom:10px;">
+            <span style="font-size:11px;">&#11088;</span>
+            <span style="font-size:10px; color:#f59e0b; font-weight:700;">2,450 MR</span>
+            <span style="background:#f59e0b; color:#000; padding:1px 6px; border-radius:8px; font-size:8px; font-weight:700;">Gold</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:6px; margin-bottom:10px;">
+            <div style="text-align:center; background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 2px;"><div style="font-size:16px;">&#127922;</div><div style="font-size:8px; color:#94a3b8;">盘口</div></div>
+            <div style="text-align:center; background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 2px;"><div style="font-size:16px;">&#129511;</div><div style="font-size:8px; color:#94a3b8;">红包</div></div>
+            <div style="text-align:center; background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 2px;"><div style="font-size:16px;">&#128241;</div><div style="font-size:8px; color:#94a3b8;">话费</div></div>
+            <div style="text-align:center; background:rgba(255,255,255,0.04); border-radius:8px; padding:8px 2px;"><div style="font-size:16px;">&#128179;</div><div style="font-size:8px; color:#94a3b8;">U 卡</div></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-top:1px solid rgba(255,255,255,0.06); font-size:11px;">
+            <div style="display:flex; align-items:center; gap:6px;"><span style="background:#26A17B; width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:9px;">&#8366;</span>USDT</div>
+            <span>8,250</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-top:1px solid rgba(255,255,255,0.06); font-size:11px;">
+            <div style="display:flex; align-items:center; gap:6px;"><span style="background:#0098EA; width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:9px;">&#9670;</span>TON</div>
+            <span>245.8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flywheel -->
+    <div class="panel" style="margin-top:16px;">
+      <div class="panel-title"><span class="dot" style="background:#f59e0b;"></span> 生态飞轮 — 用户行为驱动正向增长</div>
+      <div class="arch-flow">
+        <div class="arch-node orange">&#127922; 投注<br><small>进入合作盘口</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#11088; 赚 MR<br><small>积分自动累积</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#128081; 升 VIP<br><small>Silver→Gold→Diamond</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#128176; 更高返水<br><small>0.3%→0.8%→1.5%</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange">&#128260; 更多投注<br><small>正向循环</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2: Web3 Payment Card -->
+  <div class="proposal-section">
+    <h3 style="color:#2563eb;">&#128179; 产品二：Web3 多链支付名片（mr.vip 域名）</h3>
+    <p style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">
+      基于 ENS 域名 mr.vip 的个人/商户多链收款页面，支持 6 条链（ETH/BSC/TRX/SOL/BTC/TON），扫码或 Connect Wallet 即付。
+    </p>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#2563eb;"></span> 支持链 & 钱包协议</div>
+        <table class="data-table">
+          <thead><tr><th>链</th><th>协议</th><th>Deep Link</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td>&#128309; ETH</td><td>ERC-20</td><td>ethereum:</td><td style="color:var(--accent);">&#10003; 已上线</td></tr>
+            <tr><td>&#128993; BSC</td><td>BEP-20</td><td>ethereum:@56</td><td style="color:var(--accent);">&#10003; 已上线</td></tr>
+            <tr><td>&#128308; TRX</td><td>TRC-20</td><td>tron://transfer</td><td style="color:var(--accent);">&#10003; 已上线</td></tr>
+            <tr><td>&#128995; SOL</td><td>SPL Token</td><td>solana:</td><td style="color:var(--accent-orange);">规划中</td></tr>
+            <tr><td>&#128992; BTC</td><td>Native</td><td>bitcoin:</td><td style="color:var(--accent-orange);">规划中</td></tr>
+            <tr><td>&#128309; TON</td><td>Jetton</td><td>ton://transfer</td><td style="color:var(--accent-orange);">规划中</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><span class="dot" style="background:#2563eb;"></span> 支付名片 UI 原型</div>
+        <div style="background:#0a0a1a; border-radius:14px; padding:20px; max-width:260px; margin:0 auto; text-align:center;">
+          <div style="font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:3px; margin-bottom:14px;">MR.<span style="color:rgba(202,138,4,0.6);">VIP</span></div>
+          <div style="width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#1e293b,#334155); margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:24px; color:white; font-weight:700;">J</div>
+          <div style="font-size:18px; font-weight:700; color:white;">David Lin</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:12px;">Founder &amp; CEO</div>
+          <div style="display:flex; gap:6px; justify-content:center; margin-bottom:14px; flex-wrap:wrap;">
+            <span style="background:rgba(37,99,235,0.15); border:1px solid rgba(37,99,235,0.4); color:#60a5fa; padding:4px 10px; border-radius:20px; font-size:10px;">ETH</span>
+            <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.5); padding:4px 10px; border-radius:20px; font-size:10px;">BSC</span>
+            <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.5); padding:4px 10px; border-radius:20px; font-size:10px;">TRX</span>
+            <span style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.5); padding:4px 10px; border-radius:20px; font-size:10px;">TON</span>
+          </div>
+          <div style="background:white; border-radius:8px; width:100px; height:100px; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:10px; color:#333;">[QR Code]</div>
+          <div style="font-family:monospace; font-size:9px; color:rgba(255,255,255,0.5); word-break:break-all; padding:8px; background:rgba(255,255,255,0.03); border-radius:8px; margin-bottom:10px;">0xe48c20D6fF645B...290d992</div>
+          <div style="background:linear-gradient(135deg,#2563eb,#1d4ed8); padding:10px; border-radius:10px; font-size:12px; font-weight:600;">Connect Wallet &amp; Pay</div>
+          <div style="display:flex; gap:6px; justify-content:center; margin-top:10px;">
+            <span style="background:rgba(5,150,105,0.1); border:1px solid rgba(5,150,105,0.2); color:#34d399; padding:2px 8px; border-radius:20px; font-size:9px;">ENS: mr.vip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Integration -->
+  <div class="proposal-section">
+    <h3>&#128260; 两大产品整合逻辑</h3>
+    <div class="flow-container">
+      <div class="arch-flow">
+        <div class="arch-node orange" style="min-width:140px;">&#128179; Web3 名片<br><small>mr.vip 域名入口</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="arch-node orange" style="min-width:140px;">&#128176; TMA 钱包<br><small>充值 USDT</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="arch-node orange" style="min-width:140px;">&#127922; 盘口聚合<br><small>一键投注</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="arch-node orange" style="min-width:140px;">&#129511; 红包裂变<br><small>群内传播</small></div>
+        <div class="arch-arrow" style="color:#f59e0b;">&#10132;</div>
+        <div class="arch-node orange" style="min-width:140px;">&#128081; VIP 返水<br><small>持续留存</small></div>
+      </div>
+    </div>
+    <div class="highlight-box" style="border-color:#f59e0b; background:#fffbeb;">
+      <strong>整合价值：</strong><br>
+      &#8226; <strong>Web3 名片</strong>是品牌身份层 — 通过 ENS 域名 mr.vip 建立 Web3 可信身份，商户/用户直接扫码收付款<br>
+      &#8226; <strong>TMA 钱包</strong>是资金层 — 统一管理用户资产，成为所有盘口的资金入口<br>
+      &#8226; 两者结合 = <strong>品牌身份 + 资金入口 + 盘口聚合 + 社交裂变</strong>的完整闭环
+    </div>
+  </div>
+
+  <!-- User Journey -->
+  <div class="proposal-section">
+    <h3>&#128101; 用户增长飞轮</h3>
+    <div class="flow-container">
+      <div class="arch-flow">
+        <div class="arch-node green" style="min-width:130px;">&#129511; 群内红包<br><small>领红包=注册</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node" style="min-width:130px;">&#127922; 盘口投注<br><small>额外返水+积分</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="arch-node orange" style="min-width:130px;">&#128176; 生态变现<br><small>话费/U卡/闪兑</small></div>
+      </div>
+    </div>
+    <div class="roi-grid" style="margin-top:14px;">
+      <div class="roi-card" style="background:linear-gradient(135deg, #fef3c7, #fde68a);">
+        <div class="roi-value" style="color:#92400e;">K=2.5</div>
+        <div class="roi-label">裂变系数<br>每个红包带来 2.5 新用户</div>
+      </div>
+      <div class="roi-card" style="background:linear-gradient(135deg, #fef3c7, #fde68a);">
+        <div class="roi-value" style="color:#92400e;">85%</div>
+        <div class="roi-label">VIP 30 日留存<br>等级权益锁住用户</div>
+      </div>
+      <div class="roi-card" style="background:linear-gradient(135deg, #fef3c7, #fde68a);">
+        <div class="roi-value" style="color:#92400e;">$500+</div>
+        <div class="roi-label">Top 推荐人月佣金<br>群主都是合伙人</div>
+      </div>
+      <div class="roi-card" style="background:linear-gradient(135deg, #fef3c7, #fde68a);">
+        <div class="roi-value" style="color:#92400e;">4 期</div>
+        <div class="roi-label">产品路线图<br>MVP → 生态 → 服务 → 规模化</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Roadmap -->
+  <div class="proposal-section">
+    <h3>&#128197; 产品路线图</h3>
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent);">Phase 1 &#10003;</div>
+        <div class="timeline-text"><strong>MVP 上线</strong><br>钱包核心功能（充值/提币/转账）、基础红包、MR 积分框架、Web3 支付名片</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--primary);">Phase 2 &#10003;</div>
+        <div class="timeline-text"><strong>生态扩展</strong><br>闪兑/P2P/OTC、VIP 等级体系、话费充值、三级推荐佣金</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:#8b5cf6;">Phase 3</div>
+        <div class="timeline-text"><strong>服务矩阵</strong><br>U 卡虚拟/实体、MR 理财、盘口聚合正式上线、东南亚 8 国话费充值</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent-orange);">Phase 4</div>
+        <div class="timeline-text"><strong>规模化</strong><br>多语言支持、API 开放、跨链桥接、全球合规</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- TAB 3: INTERVIEW 1 - AI Content Management -->
+<!-- ========================================= -->
+<div id="tab-interview1" class="tab-content">
+  <div class="proposal-header">
+    <h2>&#129302; AI 重塑内容管理 / 分发 / 广告投放</h2>
+    <p>面试方案 — 「AI 如何重塑一家公司的业务效率」｜场景：内容运营</p>
+    <div style="margin-top:10px;opacity:0.8;font-size:12px;">
+      &#128161; 基于实战经验：Xthai 新闻网 AI 自动化工作流 + Feel.Trading AI 模型 API 集成
+    </div>
+  </div>
+
+  <div class="collab-box" style="margin-bottom:20px;">
+    <h4>&#129309; 人 + AI 协作模式：我如何与 AI 模型 配合完成本方案</h4>
+    <div class="collab-step"><div class="collab-num">1</div><div><strong>明确方向</strong>：我提供业务场景、目标用户、核心需求 → 让 AI 做竞品分析与痛点归纳 → 我审核修正方向</div></div>
+    <div class="collab-step"><div class="collab-num">2</div><div><strong>设定边界</strong>：我定义产品目标、功能边界、验收标准 → 驱动 AI 生成架构方案和 PRD → 我反复审核细节</div></div>
+    <div class="collab-step"><div class="collab-num">3</div><div><strong>迭代审核</strong>：AI 产出初稿 → 我逐项审核商业逻辑、数据合理性、用户体验 → 提出修改指令 → AI 修正 → 再审核</div></div>
+    <div class="collab-step"><div class="collab-num">4</div><div><strong>决策输出</strong>：最终的产品判断、优先级排序、商业决策由我做出 → AI 负责执行和呈现</div></div>
+    <div style="margin-top:10px;font-size:11px;color:#78350f;">
+      <strong>核心理念：</strong>我的工作方式就是这个岗位需要的能力 — 不需要自己写代码，但要能<strong>精准地告诉 AI 该做什么、边界在哪、怎样才算做好</strong>。这正是 AI 时代产品经理的核心工作方式。我已经用这套方法成功交付了 3 个完整产品。
+    </div>
+  </div>
+
+  <!-- Real Talk -->
+  <div class="proposal-section" style="border-left: 4px solid var(--primary); background: #eff6ff;">
+    <h3>&#128640; 破题：AI 重塑业务效率的第一步，不是买系统，是让每个人先用起来</h3>
+    <p style="font-size:13px; color:var(--text); line-height:1.9; margin-bottom:14px;">
+      很多公司一谈 AI 就想搞大系统、建中台、做定制化 — <strong>但 90% 的效率提升其实来自一件事：让每个员工都有一个 AI 助手。</strong>
+    </p>
+
+    <div class="solution-point"><strong>第一步：全员装本地 AI 工具</strong> — 每人一个 AI 订阅账号（$20/月），不需要任何开发，明天就能用</div>
+    <div class="solution-point"><strong>第二步：按岗位制定 Prompt 手册</strong> — 运营怎么用 AI 写文案、客服怎么用 AI 回工单、HR 怎么用 AI 筛简历，每个岗位 5-10 个高频场景</div>
+    <div class="solution-point"><strong>第三步：每周检视用量</strong> — 谁的 AI 用量低于 50%？不是惩罚，而是找出阻碍 — 不会用？场景不对？工具不顺手？针对性解决</div>
+    <div class="solution-point"><strong>第四步：从高频场景中沉淀自动化</strong> — 当某个 Prompt 被用了 100 次，才值得投入做成系统/工作流。这才是「从下往上」的正确导入路径</div>
+
+    <div class="highlight-box" style="margin-top:14px;">
+      <strong>&#127919; 核心观点：</strong>AI 导入不是「自上而下」做一个大项目，而是<strong>「自下而上」让每个人先用起来</strong>。真正的效率提升来自全员 AI 化，不是某个部门上了个 AI 系统。等全员都在用了，哪些场景该做成自动化工作流，数据自然会告诉你。<br><br>
+      <em>以下方案是「第四步」的展开 — 当内容运营团队已经高频使用 AI 后，哪些环节值得系统化。</em>
+    </div>
+  </div>
+
+  <!-- Core Thesis -->
+  <div class="proposal-section" style="border-left: 4px solid var(--accent-red); background: #fffbeb;">
+    <h3>&#9888; 常见误区：为什么大多数 AI 导入会失败？</h3>
+    <p style="font-size:13px; color:var(--text); line-height:1.9; margin-bottom:14px;">
+      企业导入 AI 最常见的失败模式：<strong>「老板说要上 AI → 买了工具 → 做了 Demo → 没人用 → 烂尾」</strong>。<br>
+      根本原因不是技术不行，而是<strong>没有从业务痛点出发</strong>。
+    </p>
+
+    <div class="pain-point"><strong>误区一：为了 AI 而 AI</strong> — "别人都在用 AI，我们也要用" → 没有明确要解决什么问题，导入后发现并不比原来好多少</div>
+    <div class="pain-point"><strong>误区二：高估 AI，低估落地</strong> — Demo 效果惊艳 ≠ 生产环境可用。AI 输出需要审核、需要融入工作流、需要员工愿意用</div>
+    <div class="pain-point"><strong>误区三：缺乏衡量标准</strong> — 上线后说不清效果，ROI 算不出来，最终变成"面子工程"</div>
+
+    <div class="highlight-box" style="margin-top: 14px;">
+      <strong>&#127919; 我的方法论：「痛点先行，AI 只是工具」</strong><br><br>
+      <strong>第一步</strong>：找到真正的痛点 — 这个问题是否高频？是否影响业务结果？人工解决的成本有多高？<br>
+      <strong>第二步</strong>：判断 AI 是否是最优解 — 有些问题用规则引擎/自动化脚本就够了，不需要大模型<br>
+      <strong>第三步</strong>：设计融入现有工作流的方式 — 不是让员工学新工具，而是在他们现有的工作流里"无感植入" AI<br>
+      <strong>第四步</strong>：定义可衡量的指标 — 上线前就定好 "什么算成功"，用数据说话<br><br>
+      <em>以下方案严格遵循这个逻辑：每一个 AI 模块都先说「为什么要做」，再说「怎么做」。不该用 AI 的地方，绝不硬塞。</em>
+    </div>
+  </div>
+
+  <!-- AI Decision Framework -->
+  <div class="proposal-section">
+    <h3>&#128300; AI 导入决策框架 — 该不该用 AI？</h3>
+    <table class="compare-table">
+      <thead><tr><th>判断维度</th><th>&#10003; 适合用 AI</th><th>&#10007; 不适合用 AI</th></tr></thead>
+      <tbody>
+        <tr><td><strong>任务频率</strong></td><td>每天重复 50+ 次的标准化任务</td><td>每月才做 1-2 次的低频任务</td></tr>
+        <tr><td><strong>容错空间</strong></td><td>错了可以人工修正（内容初稿、摘要）</td><td>错一次代价极高（合同审批、财务决策）</td></tr>
+        <tr><td><strong>数据条件</strong></td><td>有足够的历史数据可供学习</td><td>数据稀缺、场景全新、无法验证</td></tr>
+        <tr><td><strong>人工成本</strong></td><td>大量人力做低价值重复劳动</td><td>高价值判断工作（战略、谈判）</td></tr>
+        <tr><td><strong>落地难度</strong></td><td>能嵌入现有工作流，用户无感</td><td>需要大幅改变用户习惯</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px; color:var(--text-secondary); margin-top:10px; padding:10px; background:#f8fafc; border-radius:8px;">
+      <strong>&#128161; 实战经验：</strong>在搭建 Xthai 新闻网时，我最初想用 AI 做所有事情，后来发现热点判断还是人做更准 — AI 改写翻译效率提升 10 倍，但选题判断的准确率只有 60%。最终方案：<strong>AI 做执行层（改写/翻译/分发），人做决策层（选题/审核/策略）</strong>，这才跑通了。
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div style="text-align:center; margin: 30px 0 10px;">
+    <div style="display:inline-block; background:linear-gradient(135deg, #1e3a5f, #2563eb); color:white; padding:10px 30px; border-radius:10px; font-size:14px; font-weight:700;">
+      &#128209; 考题实战：以 Xthai 新闻网为例 — AI 如何重塑内容运营效率
+    </div>
+    <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">以下结合我实际操盘的 Xthai 泰国新闻网项目，展示 AI 如何从内容生产、分发到广告投放全链路提效</p>
+  </div>
+
+  <!-- Problem -->
+  <div class="proposal-section">
+    <h3>&#128308; 一、Xthai 项目痛点 — 导入 AI 前的真实状况</h3>
+    <div class="pain-point"><strong>内容生产效率低（高频 + 高人力成本 = 适合 AI）：</strong>一篇内容从选题到发布平均 4-6 小时，人工改写翻译速度慢、质量不稳定，无法支撑多平台日更</div>
+    <div class="pain-point"><strong>分发靠人力排期（重复性高 + 规则明确 = 适合自动化）：</strong>编辑手动将内容复制到各平台（微信/抖音/TG/FB/X），格式适配耗时，错失最佳发布时间窗口</div>
+    <div class="pain-point"><strong>广告投放凭经验（数据丰富 + 需要快速迭代 = 适合 ML 优化）：</strong>渠道选择、人群定向、出价策略依赖个人经验，无法快速迭代优化，ROI 波动大</div>
+    <div class="pain-point"><strong>数据反馈断层：</strong>内容表现数据散落在各平台，无法统一归因分析，难以回答"哪个内容在哪个渠道效果最好"</div>
+  </div>
+
+  <!-- Solution Architecture -->
+  <div class="proposal-section">
+    <h3>&#128994; 二、AI 解决方案架构</h3>
+
+    <h4>整体系统架构</h4>
+    <div class="flow-container">
+      <div class="flow-row">
+        <div class="flow-node" style="background:#fee2e2; border-color:#ef4444; color:#991b1b;">&#128240; 内容源<br><small>RSS/API/爬虫/UGC</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="flow-node" style="background:#ede9fe; border-color:#8b5cf6; color:#5b21b6;">&#129302; AI 内容引擎<br><small>改写/翻译/摘要/SEO</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="flow-node" style="background:#d1fae5; border-color:#10b981; color:#065f46;">&#9989; 审核层<br><small>AI 初审 + 人工复审</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="flow-node" style="background:#dbeafe; border-color:#2563eb; color:#1e40af;">&#128640; 智能分发<br><small>最优时间/格式/平台</small></div>
+        <div class="arch-arrow">&#10132;</div>
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#128202; 数据闭环<br><small>效果追踪/自动优化</small></div>
+      </div>
+    </div>
+
+    <h4>模块一：AI 内容生产引擎</h4>
+    <div class="solution-point"><strong>智能选题：</strong>AI 监控全网热点（Google Trends、社交媒体、竞品动态），结合历史数据预测内容潜力，自动推荐选题排序</div>
+    <div class="solution-point"><strong>一键多语言：</strong>基于大模型（AI 模型/GPT）实现内容改写 + 多语言翻译 + 本地化适配，单篇内容从 4 小时缩短至 15 分钟</div>
+    <div class="solution-point"><strong>格式自适应：</strong>AI 自动将长文转化为短视频脚本、社交媒体帖子、Newsletter 等不同格式，匹配各平台特性</div>
+    <div class="solution-point"><strong>SEO 自动优化：</strong>AI 自动生成标题、描述、关键词、结构化数据（JSON-LD），提升搜索排名</div>
+
+    <div class="highlight-box">
+      <strong>&#128161; 实战验证：</strong>我在 Xthai 新闻网已实现这套架构 → Telegram Bot 采集 → AI 改写翻译 → 人工审核 → API 自动分发至 TG/FB/IG/X，3 个月内实现网站日活 4,000+，全渠道浏览量 3,000万+
+    </div>
+
+    <h4>模块二：AI 智能分发系统</h4>
+    <div class="solution-point"><strong>最佳时间预测：</strong>基于各平台历史数据分析用户活跃时段，AI 自动计算每篇内容的最佳发布时间</div>
+    <div class="solution-point"><strong>渠道适配引擎：</strong>同一内容自动适配不同平台规则（字数限制、标签格式、图片尺寸），一次编辑，全平台分发</div>
+    <div class="solution-point"><strong>A/B 标题测试：</strong>AI 生成 3-5 个标题变体，在部分流量上测试后，自动选择 CTR 最高的版本全量推送</div>
+    <div class="solution-point"><strong>智能排期：</strong>根据内容类型、时效性、平台特性自动编排发布队列，避免同平台内容拥挤</div>
+
+    <h4>模块三：AI 广告投放优化</h4>
+    <div class="solution-point"><strong>智能受众分群：</strong>AI 分析用户行为数据，自动构建高价值人群包，替代人工凭经验定向</div>
+    <div class="solution-point"><strong>创意自动生成：</strong>基于产品信息 + 历史高效素材，AI 批量生成广告文案和视觉创意变体</div>
+    <div class="solution-point"><strong>动态出价优化：</strong>AI 实时监控各渠道 CPC/CPA，自动调整出价策略，将预算向高 ROI 渠道倾斜</div>
+    <div class="solution-point"><strong>归因分析引擎：</strong>统一各渠道数据，AI 计算多触点归因模型，精确评估每个渠道的真实贡献</div>
+  </div>
+
+  <!-- ROI -->
+  <div class="proposal-section">
+    <h3>&#128200; 三、预期 ROI 提升</h3>
+    <div class="roi-grid">
+      <div class="roi-card">
+        <div class="roi-value">70%&#8595;</div>
+        <div class="roi-label">内容生产时间<br>4-6h → 15-30min</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-value">5x&#8593;</div>
+        <div class="roi-label">内容产出量<br>日产能提升 5 倍</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-value">30%&#8593;</div>
+        <div class="roi-label">广告 ROI<br>智能投放优化</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-value">60%&#8595;</div>
+        <div class="roi-label">运营人力成本<br>自动化替代重复劳动</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="proposal-section">
+    <h3>&#128260; 四、导入前 vs 导入后对比</h3>
+    <table class="compare-table">
+      <thead><tr><th>环节</th><th>导入前</th><th>导入后 <span class="badge-ai">AI</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>选题</strong></td><td>编辑主观判断，效率低</td><td>AI 热点监控 + 潜力预测，自动推荐排序</td></tr>
+        <tr><td><strong>内容生产</strong></td><td>人工撰写/翻译 4-6h/篇</td><td>AI 生成初稿 + 人工审核 15-30min/篇</td></tr>
+        <tr><td><strong>多平台适配</strong></td><td>手动复制粘贴 + 格式调整</td><td>一次编辑 → AI 自动适配 → 全平台分发</td></tr>
+        <tr><td><strong>发布时间</strong></td><td>固定排期，错过最佳窗口</td><td>AI 预测最佳时间，动态调整排期</td></tr>
+        <tr><td><strong>广告投放</strong></td><td>经验驱动，手动调整</td><td>AI 实时优化受众/出价/创意</td></tr>
+        <tr><td><strong>效果分析</strong></td><td>各平台单独看数据，无法归因</td><td>统一数据面板 + AI 归因 + 自动优化建议</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Implementation -->
+  <div class="proposal-section">
+    <h3>&#128197; 五、实施路线图</h3>
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent);">Phase 1</div>
+        <div class="timeline-text"><strong>第 1-2 周 | 基建期</strong><br>接入内容源 API + 搭建 AI 改写/翻译管线 + 建立内容审核工作流。先跑通「采集→AI处理→审核→发布」最小闭环。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--primary);">Phase 2</div>
+        <div class="timeline-text"><strong>第 3-4 周 | 分发期</strong><br>打通多平台 API 分发（TG/微信/抖音/FB/X）+ 实现格式自适应 + 发布时间优化。上线统一内容管理后台。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:#8b5cf6;">Phase 3</div>
+        <div class="timeline-text"><strong>第 5-6 周 | 投放期</strong><br>广告创意 AI 生成 + 智能受众分群 + 动态出价系统。上线 A/B 测试框架和归因分析引擎。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent-orange);">Phase 4</div>
+        <div class="timeline-text"><strong>第 7-8 周 | 闭环期</strong><br>数据反馈闭环：效果数据 → AI 分析 → 自动优化选题/分发/投放策略。上线完整数据 Dashboard。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="proposal-section">
+    <h3>&#128736; 六、推荐技术方案</h3>
+    <table class="compare-table">
+      <thead><tr><th>模块</th><th>技术选型</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>AI 引擎</td><td>AI 模型 API（主力）+ GPT-4o（备用）</td><td>AI 模型 中文能力强、Function Calling 成熟、长上下文支持</td></tr>
+        <tr><td>内容管道</td><td>Python + Celery + Redis</td><td>异步任务队列，支持高并发内容处理</td></tr>
+        <tr><td>分发系统</td><td>各平台 Official API + Webhook</td><td>稳定性优先，避免被封号</td></tr>
+        <tr><td>数据分析</td><td>ClickHouse + Grafana</td><td>实时分析 + 可视化 Dashboard</td></tr>
+        <tr><td>广告优化</td><td>Python + scikit-learn + A/B 测试框架</td><td>轻量级 ML 模型，快速迭代</td></tr>
+        <tr><td>前端管理台</td><td>Next.js + Tailwind</td><td>快速开发、响应式、组件化</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========================================= -->
+<!-- TAB 4: INTERVIEW 2 - AI Enterprise OA -->
+<!-- ========================================= -->
+<div id="tab-interview2" class="tab-content">
+  <div class="proposal-header" style="background: linear-gradient(135deg, #065f46 0%, #10b981 100%);">
+    <h2>&#127970; AI 重塑企业管理 OA 系统</h2>
+    <p>面试方案 — 「AI 如何重塑一家公司的业务效率」｜场景：企业管理</p>
+    <div style="margin-top:10px;opacity:0.8;font-size:12px;">
+      &#128161; 将 AI Agent 能力嵌入企业日常工作流，从「被动工具」升级为「主动协作者」
+    </div>
+  </div>
+
+  <div class="collab-box" style="margin-bottom:20px;">
+    <h4>&#129309; 人 + AI 协作模式：产品经理如何驱动 AI OA 落地</h4>
+    <div class="collab-step"><div class="collab-num">1</div><div><strong>业务诊断</strong>：走访各部门，梳理高频重复工作 → 我来判断哪些环节 AI 能替代、哪些必须人做</div></div>
+    <div class="collab-step"><div class="collab-num">2</div><div><strong>方案设计</strong>：我定义痛点和目标 → 驱动 AI 生成 PRD 和流程图 → 我反复审核边界和可行性</div></div>
+    <div class="collab-step"><div class="collab-num">3</div><div><strong>优先级排序</strong>：用 RICE 模型评估 → 先做 ROI 最高的模块 → 这是人的判断力，AI 做不了</div></div>
+    <div class="collab-step"><div class="collab-num">4</div><div><strong>迭代验证</strong>：小范围试点 → 收集数据 → 我来分析效果并调整方向 → 全面推广</div></div>
+  </div>
+
+  <!-- Core Thesis for OA -->
+  <div class="proposal-section" style="border-left: 4px solid var(--accent-red); background: #fffbeb;">
+    <h3>&#9888; 前言：企业导入 AI 的最大陷阱 — 无法落地</h3>
+    <p style="font-size:13px; color:var(--text); line-height:1.9; margin-bottom:14px;">
+      90% 的企业 AI 项目停留在 Demo 阶段，无法真正落地应用。不是因为技术不行，而是：
+    </p>
+
+    <div class="pain-point"><strong>没有嵌入工作流：</strong>给员工一个独立的 AI 工具 ≠ 员工会用。他们已经习惯了现有流程，额外打开一个工具是"负担"不是"效率"</div>
+    <div class="pain-point"><strong>没有人负责运营：</strong>AI 系统上线只是开始 — 模型需要调优、Prompt 需要迭代、知识库需要更新。没有专人持续运营，效果会持续衰减</div>
+    <div class="pain-point"><strong>没有衡量 ROI：</strong>老板问"AI 到底省了多少钱"，答不上来。没有上线前的基线数据，就无法证明价值</div>
+
+    <div class="highlight-box" style="margin-top: 14px;">
+      <strong>&#127919; 我的落地原则：「无感植入，渐进替代」</strong><br><br>
+      <strong>原则一：嵌入而非替代</strong> — AI 功能必须嵌入员工已有的工具中（钉钉/飞书/企微），而不是让他们学新系统<br>
+      <strong>原则二：先做 80% 准确率的事</strong> — 优先自动化那些"做错了也容易改"的任务，高风险决策留给人<br>
+      <strong>原则三：渐进式导入</strong> — 先在一个部门试点 → 验证效果 → 调整 → 再推广，不要一上来就全公司铺开<br>
+      <strong>原则四：Day 1 就定指标</strong> — 导入前就量化现状（审批平均多久、HR 花多少时间答重复问题），上线后才有对比<br><br>
+      <em>我在 LGDLB.io 的 131 次迭代中学到的最重要的一课：<strong>能跑起来比完美更重要，先落地再优化。</strong></em>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <div class="proposal-section">
+    <h3>&#128308; 一、企业管理常见痛点 — 哪些值得用 AI 解决？</h3>
+    <div class="pain-point"><strong>审批流转低效（&#10003; 适合 AI — 规则明确 + 高频 + 容错空间大）：</strong>一个请购单从发起到完成平均 3-5 天，涉及多层签核，人工传递易丢失、难追踪</div>
+    <div class="pain-point"><strong>会议效率低下（&#10003; 适合 AI — 语音转文字技术成熟 + 摘要是大模型强项）：</strong>会议占管理者 40% 工作时间，但缺乏结构化记录，决议事项跟进率不足 50%</div>
+    <div class="pain-point"><strong>知识沉淀困难（&#10003; 适合 AI — RAG 技术成熟 + 替代大量人工检索）：</strong>企业知识分散在 Email、文档、聊天记录中，新人上手慢，老员工离职带走经验</div>
+    <div class="pain-point"><strong>项目管理粗放（&#9888; 部分适合 — 排期预测可以，但优先级判断还是靠人）：</strong>任务分配凭经验、进度追踪靠开会、风险预警全靠人为发现，缺乏数据化管理手段</div>
+    <div class="pain-point"><strong>HR 事务繁重（&#10003; 适合 AI — 简历筛选和 FAQ 是典型高频重复任务）：</strong>招聘简历筛选、考勤统计、薪资计算、员工咨询占据 HR 60% 时间，无法聚焦战略人力工作</div>
+  </div>
+
+  <!-- Solution -->
+  <div class="proposal-section">
+    <h3>&#128994; 二、AI OA 整体解决方案</h3>
+
+    <h4>系统架构：AI 中台 + 业务模块</h4>
+    <div class="flow-container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <div class="flow-node" style="background:#ede9fe; border-color:#8b5cf6; color:#5b21b6; display:inline-block; padding: 14px 30px;">
+          &#129302; AI 中台<br><small>大模型 API / RAG 知识库 / Agent 工作流引擎</small>
+        </div>
+      </div>
+      <div class="flow-arrow-down">&#9660;</div>
+      <div class="flow-row" style="gap: 10px;">
+        <div class="flow-node" style="background:#dbeafe; border-color:#2563eb; color:#1e40af;">&#128203; 智能审批<br><small>AI 预审 + 自动路由</small></div>
+        <div class="flow-node" style="background:#d1fae5; border-color:#10b981; color:#065f46;">&#128172; 会议助手<br><small>记录/摘要/跟进</small></div>
+        <div class="flow-node" style="background:#fef3c7; border-color:#f59e0b; color:#92400e;">&#128218; 知识大脑<br><small>RAG 智能问答</small></div>
+        <div class="flow-node" style="background:#fee2e2; border-color:#ef4444; color:#991b1b;">&#128203; 项目管理<br><small>AI 排期/预警</small></div>
+        <div class="flow-node" style="background:#fce7f3; border-color:#ec4899; color:#9d174d;">&#128101; HR 助手<br><small>筛选/问答/分析</small></div>
+      </div>
+    </div>
+
+    <h4>模块一：AI 智能审批系统</h4>
+    <div class="solution-point"><strong>AI 预审：</strong>审批单提交后，AI 自动检查合规性（预算额度、规则匹配、历史对比），不合规直接拦截并提示修改</div>
+    <div class="solution-point"><strong>智能路由：</strong>根据审批内容自动判断审批层级和路径，无需人工选择流程，跳过不相关环节</div>
+    <div class="solution-point"><strong>催办 Agent：</strong>AI 自动监控超时审批，通过 IM/邮件/短信智能催办，降低流转卡点</div>
+    <div class="solution-point"><strong>异常检测：</strong>AI 对比历史数据，标记异常申请（金额突增、频率异常），辅助管理层决策</div>
+
+    <h4>模块二：AI 会议助手</h4>
+    <div class="solution-point"><strong>自动记录：</strong>接入语音转文字（Whisper），实时生成会议逐字稿</div>
+    <div class="solution-point"><strong>智能摘要：</strong>大模型自动提取会议要点、决议事项、待办任务，生成结构化会议纪要</div>
+    <div class="solution-point"><strong>任务自动创建：</strong>从会议纪要中识别 Action Items，自动创建任务卡片，分配责任人和截止日期</div>
+    <div class="solution-point"><strong>跟进提醒：</strong>AI Agent 自动追踪待办进度，到期前自动提醒，超期自动升级</div>
+
+    <h4>模块三：AI 企业知识大脑</h4>
+    <div class="solution-point"><strong>RAG 知识库：</strong>将企业文档（制度/手册/SOP/历史案例）向量化存储，员工用自然语言提问即可获得精准答案</div>
+    <div class="solution-point"><strong>智能搜索：</strong>跨系统语义搜索（文档/邮件/聊天记录/工单），不再需要记住文件在哪里</div>
+    <div class="solution-point"><strong>新人助手：</strong>基于岗位自动推送学习路径，回答新人常见问题，将新人上手周期从 4 周缩短至 1 周</div>
+    <div class="solution-point"><strong>知识自动沉淀：</strong>AI 从日常工作沟通中自动提取有价值的知识片段，结构化归档</div>
+
+    <h4>模块四：AI 项目管理</h4>
+    <div class="solution-point"><strong>智能排期：</strong>基于团队历史产能数据 + 任务依赖关系，AI 自动生成最优排期方案</div>
+    <div class="solution-point"><strong>风险预警：</strong>AI 实时分析进度偏差、资源瓶颈、依赖阻塞，自动预警并建议调整方案</div>
+    <div class="solution-point"><strong>日报/周报生成：</strong>AI 从任务系统自动汇总每日/每周进展，一键生成报告</div>
+    <div class="solution-point"><strong>复盘分析：</strong>项目结束后 AI 自动分析计划 vs 实际偏差，提取经验教训</div>
+
+    <h4>模块五：AI HR 助手</h4>
+    <div class="solution-point"><strong>简历智能筛选：</strong>AI 解析简历 → 与 JD 语义匹配 → 自动评分排序 → 推荐 Top 候选人，筛选效率提升 80%</div>
+    <div class="solution-point"><strong>员工自助问答：</strong>薪资明细、假期余额、制度查询等高频问题，AI 自动回复，释放 HR 50% 事务时间</div>
+    <div class="solution-point"><strong>离职风险预测：</strong>基于考勤异常、绩效趋势、工作饱和度等数据，AI 预测高离职风险员工</div>
+    <div class="solution-point"><strong>面试辅助：</strong>根据岗位需求 AI 自动生成面试题库，面试后自动汇总评估报告</div>
+  </div>
+
+  <!-- ROI -->
+  <div class="proposal-section">
+    <h3>&#128200; 三、预期 ROI 提升</h3>
+    <div class="roi-grid">
+      <div class="roi-card" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+        <div class="roi-value" style="color:#065f46;">80%&#8595;</div>
+        <div class="roi-label">审批流转时间<br>3-5天 → 0.5-1天</div>
+      </div>
+      <div class="roi-card" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+        <div class="roi-value" style="color:#065f46;">60%&#8595;</div>
+        <div class="roi-label">会议后续跟进遗漏率<br>AI 自动追踪</div>
+      </div>
+      <div class="roi-card" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+        <div class="roi-value" style="color:#065f46;">75%&#8595;</div>
+        <div class="roi-label">新人上手时间<br>4周 → 1周</div>
+      </div>
+      <div class="roi-card" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+        <div class="roi-value" style="color:#065f46;">50%&#8595;</div>
+        <div class="roi-label">HR 事务性工作<br>释放战略人力</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="proposal-section">
+    <h3>&#128260; 四、传统 OA vs AI OA 对比</h3>
+    <table class="compare-table">
+      <thead><tr><th>维度</th><th>传统 OA</th><th>AI OA <span class="badge-ai">AI</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>审批</strong></td><td>人工选流程 → 逐级签核 → 手动催办</td><td>AI 预审 → 智能路由 → 自动催办 → 异常检测</td></tr>
+        <tr><td><strong>会议</strong></td><td>人工记录 → 邮件发纪要 → 口头跟进</td><td>自动速记 → AI 摘要 → 任务自动创建 → Agent 跟进</td></tr>
+        <tr><td><strong>知识管理</strong></td><td>分散在各处 → 搜索困难 → 经验流失</td><td>RAG 知识库 → 语义搜索 → 智能问答 → 自动沉淀</td></tr>
+        <tr><td><strong>项目管理</strong></td><td>经验排期 → 开会追进度 → 事后复盘</td><td>AI 排期 → 实时预警 → 自动报告 → 智能复盘</td></tr>
+        <tr><td><strong>HR</strong></td><td>手动筛选简历 → 事务咨询占时 → 被动响应</td><td>AI 筛选匹配 → 自助问答 → 离职预测 → 主动干预</td></tr>
+        <tr><td><strong>本质差异</strong></td><td>「流程电子化」— 只是把纸搬到线上</td><td>「流程智能化」— AI 理解业务意图并主动协助</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Implementation -->
+  <div class="proposal-section">
+    <h3>&#128197; 五、实施路线图</h3>
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent);">Phase 1<br>第1-3周</div>
+        <div class="timeline-text"><strong>AI 中台搭建 + 智能审批上线</strong><br>搭建 AI 中台基座（大模型 API 网关 + RAG 向量数据库 + Agent 框架）。优先上线智能审批模块，因为 ROI 最直接、用户感知最强。<br><em>成功标准：审批平均时长降低 50%</em></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--primary);">Phase 2<br>第4-6周</div>
+        <div class="timeline-text"><strong>会议助手 + 知识库 MVP</strong><br>接入语音转文字 → 会议摘要 → 任务自动创建。同步开始知识库文档向量化导入。<br><em>成功标准：会议纪要自动生成率 90%+，知识库命中率 70%+</em></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:#8b5cf6;">Phase 3<br>第7-9周</div>
+        <div class="timeline-text"><strong>项目管理 AI + HR 助手</strong><br>上线 AI 排期和风险预警。上线 HR 简历筛选和员工自助问答。<br><em>成功标准：项目延期率降低 30%，HR 咨询自动化率 60%+</em></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-badge" style="background:var(--accent-orange);">Phase 4<br>持续优化</div>
+        <div class="timeline-text"><strong>数据闭环 + 全面推广</strong><br>基于使用数据持续优化各模块 AI 准确率。收集用户反馈迭代。推广至全公司所有部门。<br><em>成功标准：各模块采用率 80%+，满意度 4.0/5.0+</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="proposal-section">
+    <h3>&#128736; 六、推荐技术方案</h3>
+    <table class="compare-table">
+      <thead><tr><th>模块</th><th>技术选型</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>AI 中台</td><td>AI 模型 API + OpenAI API（双供应商）</td><td>避免单一供应商风险，AI 模型 中文理解强</td></tr>
+        <tr><td>RAG 引擎</td><td>LangChain + ChromaDB / Pinecone</td><td>成熟的 RAG 框架 + 高性能向量数据库</td></tr>
+        <tr><td>Agent 框架</td><td>LangGraph / AI 模型 Agent SDK</td><td>支持复杂多步骤工作流编排</td></tr>
+        <tr><td>语音转文字</td><td>OpenAI Whisper / Azure Speech</td><td>中文识别精度高、成本可控</td></tr>
+        <tr><td>任务/项目</td><td>自研 + 对接飞书/钉钉 API</td><td>与现有 IM 生态集成，降低切换成本</td></tr>
+        <tr><td>数据分析</td><td>PostgreSQL + Metabase / Grafana</td><td>开源方案，灵活自定义 Dashboard</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Summary -->
+  <div class="proposal-section" style="background: linear-gradient(135deg, #f0fdf4, #d1fae5); border-color: var(--accent);">
+    <h3>&#127775; 方案总结</h3>
+    <p style="font-size:13px; color:var(--text); line-height:1.8;">
+      AI 对企业 OA 的重塑不是「替代人」，更不是「为了 AI 而 AI」，而是<strong>「找到真正的痛点，用 AI 解决那些人做起来又慢又重复的事」</strong>。<br><br>
+      <strong>核心逻辑：</strong>先诊断业务痛点 → 判断 AI 是否是最优解 → 嵌入现有工作流无感落地 → 用数据衡量效果 → 持续迭代优化。不该用 AI 的地方，绝不硬塞。<br><br>
+      <strong>我的优势：</strong>我不是工程师，但我通过与 AI 深度协作，独立驱动了 3 个完整产品从 0 到 1 的交付。我最清楚 AI 能做什么、不能做什么 — 因为我踩过「AI 做不好选题判断」的坑，也验证过「AI 改写翻译效率提升 10 倍」的成功。这种从实战中来的边界感，比任何理论都管用。<br><br>
+      <strong>我能带来的价值：</strong>不是带来一堆 AI 功能清单，而是带来<strong>「判断力」</strong>— 哪些痛点值得用 AI 解决、怎么确保落地不烂尾、怎么用数据证明 ROI。这才是 AI 产品经理的核心价值。
+    </p>
+  </div>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function switchSub(name) {
+    document.querySelectorAll('.sub-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.sub-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('sub-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
